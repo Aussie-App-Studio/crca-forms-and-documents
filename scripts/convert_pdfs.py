@@ -228,6 +228,8 @@ def convert_belgic() -> str:
                     is_new_para = True
             elif prev_body_y is not None and (y0 - prev_body_y) >= 18.0:
                 is_new_para = True
+            elif art_ctx == 0 and x0 >= 53.0:
+                is_new_para = True
 
             # Article 4 (canonical books) list formatting
             if art_ctx == 4:
@@ -567,7 +569,7 @@ def convert_heidelberg() -> str:
             if state == "q":
                 buf_lines.append(rendered)
             elif state == "intro":
-                if prev_body_y is not None and (y0 - prev_body_y) >= 18.0:
+                if (prev_body_y is not None and (y0 - prev_body_y) >= 18.0) or (buf_lines and x0 >= 53.0):
                     flush_buf()
                 buf_lines.append(rendered)
             elif state == "a":
