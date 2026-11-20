@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-20T14:45:32+00:00",
+  "generatedAt": "2026-11-20T15:02:19+00:00",
   "repoDefault": {
     "owner": "Aussie-App-Studio",
     "repo": "crca-forms-and-documents",
     "branch": "main"
   },
-  "documentCount": 38,
+  "documentCount": 40,
   "categories": [
     {
       "id": "creeds-and-confessions",
@@ -966,6 +966,186 @@
                   "slug": "conclusion-rejection-of-false-accusations"
                 }
               ]
+            },
+            {
+              "id": "creeds-and-confessions-02-reformed-confessions-04-the-westminster-confession-of-faith",
+              "title": "The Westminster Confession of Faith",
+              "path": "Creeds and Confessions/02 - Reformed Confessions/04 - The Westminster Confession of Faith.md",
+              "pdfPath": null,
+              "wordCount": 12212,
+              "footnoteCount": 0,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Note on CRCA Adoption",
+                  "slug": "note-on-crca-adoption"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 1: Of the Holy Scripture",
+                  "slug": "chapter-1-of-the-holy-scripture"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 2: Of God, and of the Holy Trinity",
+                  "slug": "chapter-2-of-god-and-of-the-holy-trinity"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 3: Of God's Eternal Decree",
+                  "slug": "chapter-3-of-gods-eternal-decree"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 4: Of Creation",
+                  "slug": "chapter-4-of-creation"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 5: Of Providence",
+                  "slug": "chapter-5-of-providence"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 6: Of the Fall of Man, of Sin, and of the Punishment Thereof",
+                  "slug": "chapter-6-of-the-fall-of-man-of-sin-and-of-the-punishment-thereof"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 7: Of God's Covenant with Man",
+                  "slug": "chapter-7-of-gods-covenant-with-man"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 8: Of Christ the Mediator",
+                  "slug": "chapter-8-of-christ-the-mediator"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 9: Of Free Will",
+                  "slug": "chapter-9-of-free-will"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 10: Of Effectual Calling",
+                  "slug": "chapter-10-of-effectual-calling"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 11: Of Justification",
+                  "slug": "chapter-11-of-justification"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 12: Of Adoption",
+                  "slug": "chapter-12-of-adoption"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 13: Of Sanctification",
+                  "slug": "chapter-13-of-sanctification"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 14: Of Saving Faith",
+                  "slug": "chapter-14-of-saving-faith"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 15: Of Repentance unto Life",
+                  "slug": "chapter-15-of-repentance-unto-life"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 16: Of Good Works",
+                  "slug": "chapter-16-of-good-works"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 17: Of the Perseverance of the Saints",
+                  "slug": "chapter-17-of-the-perseverance-of-the-saints"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 18: Of the Assurance of Grace and Salvation",
+                  "slug": "chapter-18-of-the-assurance-of-grace-and-salvation"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 19: Of the Law of God",
+                  "slug": "chapter-19-of-the-law-of-god"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 20: Of Christian Liberty, and Liberty of Conscience",
+                  "slug": "chapter-20-of-christian-liberty-and-liberty-of-conscience"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 21: Of Religious Worship and the Sabbath Day",
+                  "slug": "chapter-21-of-religious-worship-and-the-sabbath-day"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 22: Of Lawful Oaths and Vows",
+                  "slug": "chapter-22-of-lawful-oaths-and-vows"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 23: Of the Civil Magistrate",
+                  "slug": "chapter-23-of-the-civil-magistrate"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 24: Of Marriage and Divorce",
+                  "slug": "chapter-24-of-marriage-and-divorce"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 25: Of the Church",
+                  "slug": "chapter-25-of-the-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 26: Of the Communion of Saints",
+                  "slug": "chapter-26-of-the-communion-of-saints"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 27: Of the Sacraments",
+                  "slug": "chapter-27-of-the-sacraments"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 28: Of Baptism",
+                  "slug": "chapter-28-of-baptism"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 29: Of the Lord's Supper",
+                  "slug": "chapter-29-of-the-lords-supper"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 30: Of Church Censures",
+                  "slug": "chapter-30-of-church-censures"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 31: Of Synods and Councils",
+                  "slug": "chapter-31-of-synods-and-councils"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 32: Of the State of Men after Death, and of the Resurrection of the Dead",
+                  "slug": "chapter-32-of-the-state-of-men-after-death-and-of-the-resurrection-of-the-dead"
+                },
+                {
+                  "level": 2,
+                  "text": "Chapter 33: Of the Last Judgment",
+                  "slug": "chapter-33-of-the-last-judgment"
+                }
+              ]
             }
           ]
         },
@@ -1001,7 +1181,38 @@
               "pdfPath": null,
               "wordCount": 1290,
               "footnoteCount": 16,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Why do we baptise with water?",
+                  "slug": "why-do-we-baptise-with-water"
+                },
+                {
+                  "level": 2,
+                  "text": "Why do we baptise in the name of the Father, Son & Holy Spirit?",
+                  "slug": "why-do-we-baptise-in-the-name-of-the-father-son-holy-spirit"
+                },
+                {
+                  "level": 2,
+                  "text": "Why do we baptise children of believers?",
+                  "slug": "why-do-we-baptise-children-of-believers"
+                },
+                {
+                  "level": 2,
+                  "text": "Question to Parents:",
+                  "slug": "question-to-parents"
+                },
+                {
+                  "level": 2,
+                  "text": "Question to the congregation (optionally have the congregation stand):",
+                  "slug": "question-to-the-congregation-optionally-have-the-congregation-stand"
+                },
+                {
+                  "level": 2,
+                  "text": "Baptism:",
+                  "slug": "baptism"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-01-baptism-02-form-for-the-baptism-of-the-children-of-believers-ii",
@@ -1019,7 +1230,13 @@
               "pdfPath": null,
               "wordCount": 1851,
               "footnoteCount": 12,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "CALL TO WORSHIP AND OPENING OF SERVICE",
+                  "slug": "call-to-worship-and-opening-of-service"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-01-baptism-04-form-for-the-baptism-of-the-children-of-believers-iv",
@@ -1028,7 +1245,23 @@
               "pdfPath": null,
               "wordCount": 1416,
               "footnoteCount": 11,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Baptismal prayer:",
+                  "slug": "baptismal-prayer"
+                },
+                {
+                  "level": 2,
+                  "text": "Address to Parents:",
+                  "slug": "address-to-parents"
+                },
+                {
+                  "level": 2,
+                  "text": "Prayer of thanksgiving:",
+                  "slug": "prayer-of-thanksgiving"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-01-baptism-05-form-for-the-baptism-of-adults",
@@ -1037,7 +1270,23 @@
               "pdfPath": null,
               "wordCount": 2995,
               "footnoteCount": 15,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "CALL TO WORSHIP AND OPENING OF SERVICE",
+                  "slug": "call-to-worship-and-opening-of-service"
+                },
+                {
+                  "level": 2,
+                  "text": "THE SERVICE OF THE WORD",
+                  "slug": "the-service-of-the-word"
+                },
+                {
+                  "level": 2,
+                  "text": "PROFESSION",
+                  "slug": "profession"
+                }
+              ]
             }
           ]
         },
@@ -1052,7 +1301,28 @@
               "pdfPath": null,
               "wordCount": 1361,
               "footnoteCount": 4,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "PRESENTATION",
+                  "slug": "presentation"
+                },
+                {
+                  "level": 2,
+                  "text": "PROFESSION",
+                  "slug": "profession"
+                },
+                {
+                  "level": 2,
+                  "text": "PRAYER AND BLESSING",
+                  "slug": "prayer-and-blessing"
+                },
+                {
+                  "level": 2,
+                  "text": "CONGREGATIONAL WELCOME",
+                  "slug": "congregational-welcome"
+                }
+              ]
             }
           ]
         },
@@ -1085,7 +1355,18 @@
               "pdfPath": null,
               "wordCount": 2432,
               "footnoteCount": 33,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "APOSTLES' CREED",
+                  "slug": "apostles-creed"
+                },
+                {
+                  "level": 2,
+                  "text": "NICENE CREED",
+                  "slug": "nicene-creed"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-03-the-lords-supper-04-form-for-the-celebration-of-the-lords-supper-ii",
@@ -1094,7 +1375,38 @@
               "pdfPath": null,
               "wordCount": 2120,
               "footnoteCount": 28,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "EXHORTATION",
+                  "slug": "exhortation"
+                },
+                {
+                  "level": 2,
+                  "text": "CONFESSION OF SIN",
+                  "slug": "confession-of-sin"
+                },
+                {
+                  "level": 2,
+                  "text": "ASSURANCE OF PARDON",
+                  "slug": "assurance-of-pardon"
+                },
+                {
+                  "level": 2,
+                  "text": "APOSTLES' CREED",
+                  "slug": "apostles-creed"
+                },
+                {
+                  "level": 2,
+                  "text": "NICENE CREED",
+                  "slug": "nicene-creed"
+                },
+                {
+                  "level": 2,
+                  "text": "Prayer of thanksgiving:",
+                  "slug": "prayer-of-thanksgiving"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-03-the-lords-supper-05-form-for-the-celebration-of-the-lords-supper-iii",
@@ -1112,7 +1424,43 @@
               "pdfPath": null,
               "wordCount": 1252,
               "footnoteCount": 9,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "THE THANKSGIVING",
+                  "slug": "the-thanksgiving"
+                },
+                {
+                  "level": 2,
+                  "text": "THE INSTITUTION",
+                  "slug": "the-institution"
+                },
+                {
+                  "level": 2,
+                  "text": "PRAYER OF CONSECRATION",
+                  "slug": "prayer-of-consecration"
+                },
+                {
+                  "level": 2,
+                  "text": "THE INVITATION",
+                  "slug": "the-invitation"
+                },
+                {
+                  "level": 2,
+                  "text": "THE DEDICATION",
+                  "slug": "the-dedication"
+                },
+                {
+                  "level": 2,
+                  "text": "THE COMMUNION",
+                  "slug": "the-communion"
+                },
+                {
+                  "level": 2,
+                  "text": "THE THANKSGIVING",
+                  "slug": "the-thanksgiving-2"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-03-the-lords-supper-07-form-for-the-celebration-of-the-lords-supper-v",
@@ -1121,7 +1469,28 @@
               "pdfPath": null,
               "wordCount": 1015,
               "footnoteCount": 10,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "THE INSTITUTION",
+                  "slug": "the-institution"
+                },
+                {
+                  "level": 2,
+                  "text": "THE INVITATION",
+                  "slug": "the-invitation"
+                },
+                {
+                  "level": 2,
+                  "text": "THE COMMUNION",
+                  "slug": "the-communion"
+                },
+                {
+                  "level": 2,
+                  "text": "THE THANKSGIVING",
+                  "slug": "the-thanksgiving"
+                }
+              ]
             }
           ]
         },
@@ -1136,7 +1505,23 @@
               "pdfPath": null,
               "wordCount": 497,
               "footnoteCount": 3,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "FIRST PUBLIC ADMONITION OF CHRISTIAN DISCIPLINE",
+                  "slug": "first-public-admonition-of-christian-discipline"
+                },
+                {
+                  "level": 2,
+                  "text": "SECOND PUBLIC ADMONITION OF CHRISTIAN DISCIPLINE",
+                  "slug": "second-public-admonition-of-christian-discipline"
+                },
+                {
+                  "level": 2,
+                  "text": "THIRD PUBLIC ADMONITION OF CHRISTIAN DISCIPLINE",
+                  "slug": "third-public-admonition-of-christian-discipline"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-04-discipline-02-form-for-excommunication",
@@ -1172,7 +1557,18 @@
               "pdfPath": null,
               "wordCount": 223,
               "footnoteCount": 0,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "1. ANNOUNCEMENT OF A TRIAL PERIOD FOR AN UNFAITHFUL BAPTISED MEMBER",
+                  "slug": "1-announcement-of-a-trial-period-for-an-unfaithful-baptised-member"
+                },
+                {
+                  "level": 2,
+                  "text": "2. ANNOUNCEMENT OF ERASURE OF A BAPTISED MEMBER",
+                  "slug": "2-announcement-of-erasure-of-a-baptised-member"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-04-discipline-06-resignation-erasure-and-re-admission-of-communicant-members",
@@ -1181,7 +1577,18 @@
               "pdfPath": null,
               "wordCount": 215,
               "footnoteCount": 0,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "1. ANNOUNCEMENT OF RESIGNATION OF A COMMUNICANT MEMBER",
+                  "slug": "1-announcement-of-resignation-of-a-communicant-member"
+                },
+                {
+                  "level": 2,
+                  "text": "2. ANNOUNCEMENT OF ERASURE OF A COMMUNICANT MEMBER",
+                  "slug": "2-announcement-of-erasure-of-a-communicant-member"
+                }
+              ]
             }
           ]
         },
@@ -1196,7 +1603,28 @@
               "pdfPath": null,
               "wordCount": 3489,
               "footnoteCount": 65,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "GENERAL INTRODUCTION",
+                  "slug": "general-introduction"
+                },
+                {
+                  "level": 2,
+                  "text": "PARTICULAR OFFICES",
+                  "slug": "particular-offices"
+                },
+                {
+                  "level": 2,
+                  "text": "VOWS",
+                  "slug": "vows"
+                },
+                {
+                  "level": 2,
+                  "text": "CHARGES",
+                  "slug": "charges"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-05-ordination-and-installation-of-office-bearers-02-form-for-the-ordination-and-installation-of-ministers",
@@ -1205,7 +1633,33 @@
               "pdfPath": null,
               "wordCount": 3085,
               "footnoteCount": 41,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "THE OPENING OF THE SERVICE",
+                  "slug": "the-opening-of-the-service"
+                },
+                {
+                  "level": 2,
+                  "text": "CONFESSION AND ASSURANCE",
+                  "slug": "confession-and-assurance"
+                },
+                {
+                  "level": 2,
+                  "text": "THE MINISTRY OF THE WORD",
+                  "slug": "the-ministry-of-the-word"
+                },
+                {
+                  "level": 2,
+                  "text": "THE ORDINATION / INSTALLATION",
+                  "slug": "the-ordination-installation"
+                },
+                {
+                  "level": 2,
+                  "text": "CHARGES",
+                  "slug": "charges"
+                }
+              ]
             },
             {
               "id": "the-liturgical-forms-05-ordination-and-installation-of-office-bearers-03-form-for-the-ordination-and-installation-of-elders-and-deacons",
@@ -1214,7 +1668,38 @@
               "pdfPath": null,
               "wordCount": 2948,
               "footnoteCount": 24,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "THE OPENING OF THE SERVICE",
+                  "slug": "the-opening-of-the-service"
+                },
+                {
+                  "level": 2,
+                  "text": "CONFESSION AND ASSURANCE",
+                  "slug": "confession-and-assurance"
+                },
+                {
+                  "level": 2,
+                  "text": "THE MINISTRY OF THE WORD",
+                  "slug": "the-ministry-of-the-word"
+                },
+                {
+                  "level": 2,
+                  "text": "THE ORDINATION / INSTALLATION",
+                  "slug": "the-ordination-installation"
+                },
+                {
+                  "level": 2,
+                  "text": "VOWS",
+                  "slug": "vows"
+                },
+                {
+                  "level": 2,
+                  "text": "CHARGES",
+                  "slug": "charges"
+                }
+              ]
             }
           ]
         },
@@ -1238,7 +1723,58 @@
               "pdfPath": null,
               "wordCount": 2364,
               "footnoteCount": 17,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "DECLARATION OF PURPOSE",
+                  "slug": "declaration-of-purpose"
+                },
+                {
+                  "level": 2,
+                  "text": "INSTITUTION AND MEANING OF MARRIAGE",
+                  "slug": "institution-and-meaning-of-marriage"
+                },
+                {
+                  "level": 2,
+                  "text": "INVOCATION",
+                  "slug": "invocation"
+                },
+                {
+                  "level": 2,
+                  "text": "DECLARATION OF INTENT",
+                  "slug": "declaration-of-intent"
+                },
+                {
+                  "level": 2,
+                  "text": "PARENTS' SUPPORT (optional)",
+                  "slug": "parents-support-optional"
+                },
+                {
+                  "level": 2,
+                  "text": "CONGREGATIONAL SUPPORT (optional)",
+                  "slug": "congregational-support-optional"
+                },
+                {
+                  "level": 2,
+                  "text": "EXCHANGE OF VOWS",
+                  "slug": "exchange-of-vows"
+                },
+                {
+                  "level": 2,
+                  "text": "GIVING OF THE RINGS (optional)",
+                  "slug": "giving-of-the-rings-optional"
+                },
+                {
+                  "level": 2,
+                  "text": "PROCLAMATION OF MARRIAGE",
+                  "slug": "proclamation-of-marriage"
+                },
+                {
+                  "level": 2,
+                  "text": "PRAYER AND BLESSING",
+                  "slug": "prayer-and-blessing"
+                }
+              ]
             }
           ]
         },
@@ -1253,7 +1789,575 @@
               "pdfPath": null,
               "wordCount": 1715,
               "footnoteCount": 28,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "INTRODUCTORY REMARKS",
+                  "slug": "introductory-remarks"
+                },
+                {
+                  "level": 2,
+                  "text": "SERVICE IN THE CHURCH, CHAPEL, OR HOME",
+                  "slug": "service-in-the-church-chapel-or-home"
+                },
+                {
+                  "level": 2,
+                  "text": "AT THE CEMETERY",
+                  "slug": "at-the-cemetery"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "church-order",
+      "title": "Church Order",
+      "groups": [
+        {
+          "id": "church-order",
+          "title": "Church Order",
+          "items": [
+            {
+              "id": "church-order-01-crca-church-order-2022",
+              "title": "CRCA Church Order (2022)",
+              "path": "Church Order/01 - CRCA Church Order (2022).md",
+              "pdfPath": null,
+              "wordCount": 8396,
+              "footnoteCount": 3,
+              "headings": [
+                {
+                  "level": 3,
+                  "text": "Article 1 — The Purpose, Basis and Subjects of the Church Order",
+                  "slug": "article-1-the-purpose-basis-and-subjects-of-the-church-order"
+                },
+                {
+                  "level": 2,
+                  "text": "Part I: The Offices of the Church",
+                  "slug": "part-i-the-offices-of-the-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Section A — General Provisions",
+                  "slug": "section-a-general-provisions"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 2 — General and Special Offices in the Church",
+                  "slug": "article-2-general-and-special-offices-in-the-church"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 3 — Eligibility for Special Offices",
+                  "slug": "article-3-eligibility-for-special-offices"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 4 — Calling to Special Offices",
+                  "slug": "article-4-calling-to-special-offices"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 5 — Signifying Agreement with the Form of Subscription",
+                  "slug": "article-5-signifying-agreement-with-the-form-of-subscription"
+                },
+                {
+                  "level": 2,
+                  "text": "Section B — Ministers of the Word and Sacraments",
+                  "slug": "section-b-ministers-of-the-word-and-sacraments"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 6 — Students for the Ministry of the Word and Sacraments",
+                  "slug": "article-6-students-for-the-ministry-of-the-word-and-sacraments"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 7 — Eligibility for Admission to the Ministry of the Word and Sacraments",
+                  "slug": "article-7-eligibility-for-admission-to-the-ministry-of-the-word-and-sacraments"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 8 — Admission to the Ministry Without Prescribed Training",
+                  "slug": "article-8-admission-to-the-ministry-without-prescribed-training"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 9 — Ministers Eligible for Call",
+                  "slug": "article-9-ministers-eligible-for-call"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 10 — Admission, Ordination and Installation",
+                  "slug": "article-10-admission-ordination-and-installation"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 11 — Function of the Minister of the Word and Sacraments",
+                  "slug": "article-11-function-of-the-minister-of-the-word-and-sacraments"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 12 — Ministers in Regular Service",
+                  "slug": "article-12-ministers-in-regular-service"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 13 — Ministers in Special and General Service",
+                  "slug": "article-13-ministers-in-special-and-general-service"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 14 — Associate Ministers",
+                  "slug": "article-14-associate-ministers"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 15 — Release from Ministerial Office",
+                  "slug": "article-15-release-from-ministerial-office"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 16 — Worship Services in non-CRCA Churches",
+                  "slug": "article-16-worship-services-in-non-crca-churches"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 17 — Temporary Release from Service",
+                  "slug": "article-17-temporary-release-from-service"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 18 — Release from the Ministry in a Congregation",
+                  "slug": "article-18-release-from-the-ministry-in-a-congregation"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 19 — Discharge from the Ministry",
+                  "slug": "article-19-discharge-from-the-ministry"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 20 — Resignation from the Ministry",
+                  "slug": "article-20-resignation-from-the-ministry"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 21 — Retirement of Ministers",
+                  "slug": "article-21-retirement-of-ministers"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 22 — Election of Elders and Deacons",
+                  "slug": "article-22-election-of-elders-and-deacons"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 23 — Tasks of the Elders",
+                  "slug": "article-23-tasks-of-the-elders"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 24 — Tasks of the Deacons",
+                  "slug": "article-24-tasks-of-the-deacons"
+                },
+                {
+                  "level": 2,
+                  "text": "Part II: The Assemblies of the Church",
+                  "slug": "part-ii-the-assemblies-of-the-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Section A — General Provisions",
+                  "slug": "section-a-general-provisions-2"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 25 — Assemblies",
+                  "slug": "article-25-assemblies"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 26 — Authority of Church Assemblies",
+                  "slug": "article-26-authority-of-church-assemblies"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 27 — Matters Legally Before Assemblies",
+                  "slug": "article-27-matters-legally-before-assemblies"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 28 — Decisions of Assemblies and Reconsideration of Such",
+                  "slug": "article-28-decisions-of-assemblies-and-reconsideration-of-such"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 29 — Appeals",
+                  "slug": "article-29-appeals"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 30 — Procedure and Order in Assemblies",
+                  "slug": "article-30-procedure-and-order-in-assemblies"
+                },
+                {
+                  "level": 2,
+                  "text": "Section B — The Session / Church Council",
+                  "slug": "section-b-the-session-church-council"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 31 — Composition of a Session",
+                  "slug": "article-31-composition-of-a-session"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 32 — Support of Ministers and Church Workers",
+                  "slug": "article-32-support-of-ministers-and-church-workers"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 33 — Frequency of Meetings and Mutual Censure",
+                  "slug": "article-33-frequency-of-meetings-and-mutual-censure"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 34 — Need for Counsellor During Vacancy",
+                  "slug": "article-34-need-for-counsellor-during-vacancy"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 35 — Achieving Congregational Status",
+                  "slug": "article-35-achieving-congregational-status"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 36 — Cooperation of the Congregation and Congregational Meetings",
+                  "slug": "article-36-cooperation-of-the-congregation-and-congregational-meetings"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 37 — Disaffiliation or Disbandment",
+                  "slug": "article-37-disaffiliation-or-disbandment"
+                },
+                {
+                  "level": 2,
+                  "text": "Section C — The Major Assemblies: Classis and Synod",
+                  "slug": "section-c-the-major-assemblies-classis-and-synod"
+                },
+                {
+                  "level": 2,
+                  "text": "General Provisions",
+                  "slug": "general-provisions"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 38 — Definition, Credentials and Voting",
+                  "slug": "article-38-definition-credentials-and-voting"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 39 — Delegation of Deacons",
+                  "slug": "article-39-delegation-of-deacons"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 40 — Appointment of Convening Church",
+                  "slug": "article-40-appointment-of-convening-church"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 41 — Composition of Moderamen and Interim Committee",
+                  "slug": "article-41-composition-of-moderamen-and-interim-committee"
+                },
+                {
+                  "level": 2,
+                  "text": "The Classis",
+                  "slug": "the-classis"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 42 — Constituency of a Classis",
+                  "slug": "article-42-constituency-of-a-classis"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 43 — Meetings of Classis",
+                  "slug": "article-43-meetings-of-classis"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 44 — The Work of Classis",
+                  "slug": "article-44-the-work-of-classis"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 45 — Church Visitors",
+                  "slug": "article-45-church-visitors"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 46 — Classis Licensures",
+                  "slug": "article-46-classis-licensures"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 47 — Joint Action of Neighbouring Classes",
+                  "slug": "article-47-joint-action-of-neighbouring-classes"
+                },
+                {
+                  "level": 2,
+                  "text": "The Synod",
+                  "slug": "the-synod"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 48 — Constituency",
+                  "slug": "article-48-constituency"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 49 — Meetings",
+                  "slug": "article-49-meetings"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 50 — Task",
+                  "slug": "article-50-task"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 51 — Synodical Deputies",
+                  "slug": "article-51-synodical-deputies"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 52 — Inter-Church Relations",
+                  "slug": "article-52-inter-church-relations"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 53 — Reformed Ecumenical Assemblies",
+                  "slug": "article-53-reformed-ecumenical-assemblies"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 54 — Relationship with the Reformed Theological College",
+                  "slug": "article-54-relationship-with-the-reformed-theological-college"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 55 — Correspondence with Civil Authorities",
+                  "slug": "article-55-correspondence-with-civil-authorities"
+                },
+                {
+                  "level": 2,
+                  "text": "Part III: The Task of the Church",
+                  "slug": "part-iii-the-task-of-the-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Section A — Worship Services",
+                  "slug": "section-a-worship-services"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 56 — Occasions for Worship Services",
+                  "slug": "article-56-occasions-for-worship-services"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 57 — Worship Services",
+                  "slug": "article-57-worship-services"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 58 — Conducting Services and the Preached Word",
+                  "slug": "article-58-conducting-services-and-the-preached-word"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 59 — Preaching",
+                  "slug": "article-59-preaching"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 60 — Administration of the Sacraments",
+                  "slug": "article-60-administration-of-the-sacraments"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 61 — Baptism",
+                  "slug": "article-61-baptism"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 62 — Admission to Communicant Membership",
+                  "slug": "article-62-admission-to-communicant-membership"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 63 — Lord's Supper",
+                  "slug": "article-63-lords-supper"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 64 — Offerings",
+                  "slug": "article-64-offerings"
+                },
+                {
+                  "level": 2,
+                  "text": "Section B — Faith Nurture",
+                  "slug": "section-b-faith-nurture"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 65 — Faith Nurture",
+                  "slug": "article-65-faith-nurture"
+                },
+                {
+                  "level": 2,
+                  "text": "Section C — Pastoral Care and Oversight",
+                  "slug": "section-c-pastoral-care-and-oversight"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 66 — In and Outside the Congregation",
+                  "slug": "article-66-in-and-outside-the-congregation"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 67 — Membership of Those Who Move",
+                  "slug": "article-67-membership-of-those-who-move"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 68 — Membership Transfers",
+                  "slug": "article-68-membership-transfers"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 69 — Membership Records",
+                  "slug": "article-69-membership-records"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 70 — Solemnisation of Marriage",
+                  "slug": "article-70-solemnisation-of-marriage"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 71 — Funerals",
+                  "slug": "article-71-funerals"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 72 — Kingdom Involvement",
+                  "slug": "article-72-kingdom-involvement"
+                },
+                {
+                  "level": 2,
+                  "text": "Section D — Missions",
+                  "slug": "section-d-missions"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 73 — The Mission of the Church",
+                  "slug": "article-73-the-mission-of-the-church"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 74 — Local Evangelism",
+                  "slug": "article-74-local-evangelism"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 75 — Outreach, Aid and Development",
+                  "slug": "article-75-outreach-aid-and-development"
+                },
+                {
+                  "level": 2,
+                  "text": "Part IV: The Admonition and Discipline of the Church",
+                  "slug": "part-iv-the-admonition-and-discipline-of-the-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Section A — General Provisions",
+                  "slug": "section-a-general-provisions-3"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 76 — Purpose",
+                  "slug": "article-76-purpose"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 77 — Nature",
+                  "slug": "article-77-nature"
+                },
+                {
+                  "level": 2,
+                  "text": "Section B — The Admonition and Discipline of Members",
+                  "slug": "section-b-the-admonition-and-discipline-of-members"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 78 — Baptised Members Who do Not Confess Their Faith",
+                  "slug": "article-78-baptised-members-who-do-not-confess-their-faith"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 79 — The Discipline of Communicant Members",
+                  "slug": "article-79-the-discipline-of-communicant-members"
+                },
+                {
+                  "level": 2,
+                  "text": "Section C — The Admonition and Discipline of Office Bearers",
+                  "slug": "section-c-the-admonition-and-discipline-of-office-bearers"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 80 — Temporary Relief of Duties",
+                  "slug": "article-80-temporary-relief-of-duties"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 81 — Special Discipline",
+                  "slug": "article-81-special-discipline"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 82 — Suspension from Office",
+                  "slug": "article-82-suspension-from-office"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 83 — Deposition from Office",
+                  "slug": "article-83-deposition-from-office"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 84 — Discipline of Ministers in General and Special Service",
+                  "slug": "article-84-discipline-of-ministers-in-general-and-special-service"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 85 — Authority of Major Assemblies in Abnormal Situations",
+                  "slug": "article-85-authority-of-major-assemblies-in-abnormal-situations"
+                },
+                {
+                  "level": 2,
+                  "text": "Conclusion",
+                  "slug": "conclusion"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 86 — Lording Over One Another",
+                  "slug": "article-86-lording-over-one-another"
+                }
+              ]
             }
           ]
         }
@@ -1334,7 +2438,63 @@
               "pdfPath": null,
               "wordCount": 407,
               "footnoteCount": 0,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "1. Romans 1:7",
+                  "slug": "1-romans-1-7"
+                },
+                {
+                  "level": 2,
+                  "text": "2. Galatians 1:3-5",
+                  "slug": "2-galatians-1-3-5"
+                },
+                {
+                  "level": 2,
+                  "text": "3. 1 Timothy 1:2",
+                  "slug": "3-1-timothy-1-2"
+                },
+                {
+                  "level": 2,
+                  "text": "4. 2 Peter 1:2",
+                  "slug": "4-2-peter-1-2"
+                },
+                {
+                  "level": 2,
+                  "text": "5. Revelation 1:4-6",
+                  "slug": "5-revelation-1-4-6"
+                },
+                {
+                  "level": 2,
+                  "text": "6. Numbers 6:24-26",
+                  "slug": "6-numbers-6-24-26"
+                },
+                {
+                  "level": 2,
+                  "text": "7. 2 Corinthians 13:14",
+                  "slug": "7-2-corinthians-13-14"
+                },
+                {
+                  "level": 2,
+                  "text": "8. Romans 15:13",
+                  "slug": "8-romans-15-13"
+                },
+                {
+                  "level": 2,
+                  "text": "9. Philippians 4:7",
+                  "slug": "9-philippians-4-7"
+                },
+                {
+                  "level": 2,
+                  "text": "10. 1 Thessalonians 5:23-24",
+                  "slug": "10-1-thessalonians-5-23-24"
+                },
+                {
+                  "level": 2,
+                  "text": "11. 2 Thessalonians 3:16",
+                  "slug": "11-2-thessalonians-3-16"
+                }
+              ]
             },
             {
               "id": "other-resources-03-other-liturgical-readings-02-readings-of-the-law",
@@ -1343,7 +2503,93 @@
               "pdfPath": null,
               "wordCount": 4366,
               "footnoteCount": 0,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "12. Exodus 20:1-17",
+                  "slug": "12-exodus-20-1-17"
+                },
+                {
+                  "level": 2,
+                  "text": "13. Deuteronomy 5:6-21",
+                  "slug": "13-deuteronomy-5-6-21"
+                },
+                {
+                  "level": 2,
+                  "text": "14. Matthew 22:37-40",
+                  "slug": "14-matthew-22-37-40"
+                },
+                {
+                  "level": 2,
+                  "text": "15. Leviticus 19:1-4, 11-18, 32",
+                  "slug": "15-leviticus-19-1-4-11-18-32"
+                },
+                {
+                  "level": 2,
+                  "text": "16. Matthew 5:3-16",
+                  "slug": "16-matthew-5-3-16"
+                },
+                {
+                  "level": 2,
+                  "text": "17. Matthew 5:17-20, 38-48",
+                  "slug": "17-matthew-5-17-20-38-48"
+                },
+                {
+                  "level": 2,
+                  "text": "18. Luke 6:27-38",
+                  "slug": "18-luke-6-27-38"
+                },
+                {
+                  "level": 2,
+                  "text": "19. John 15:9-17",
+                  "slug": "19-john-15-9-17"
+                },
+                {
+                  "level": 2,
+                  "text": "20. Romans 12:9-21",
+                  "slug": "20-romans-12-9-21"
+                },
+                {
+                  "level": 2,
+                  "text": "21. Romans 13:8-14",
+                  "slug": "21-romans-13-8-14"
+                },
+                {
+                  "level": 2,
+                  "text": "22. Galatians 5:16-6:2",
+                  "slug": "22-galatians-5-16-6-2"
+                },
+                {
+                  "level": 2,
+                  "text": "23. Ephesians 5:1-21",
+                  "slug": "23-ephesians-5-1-21"
+                },
+                {
+                  "level": 2,
+                  "text": "24. Colossians 3:1-17",
+                  "slug": "24-colossians-3-1-17"
+                },
+                {
+                  "level": 2,
+                  "text": "25. Hebrews 13:1-17",
+                  "slug": "25-hebrews-13-1-17"
+                },
+                {
+                  "level": 2,
+                  "text": "26. 1 Peter 2:11-17",
+                  "slug": "26-1-peter-2-11-17"
+                },
+                {
+                  "level": 2,
+                  "text": "27. 1 Peter 4:7-19",
+                  "slug": "27-1-peter-4-7-19"
+                },
+                {
+                  "level": 2,
+                  "text": "28. 1 John 4:7-21",
+                  "slug": "28-1-john-4-7-21"
+                }
+              ]
             },
             {
               "id": "other-resources-03-other-liturgical-readings-03-assurances-of-pardon",
@@ -1397,7 +2643,78 @@
               "pdfPath": null,
               "wordCount": 498,
               "footnoteCount": 0,
-              "headings": []
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "58. 1 Chronicles 29:10-14",
+                  "slug": "58-1-chronicles-29-10-14"
+                },
+                {
+                  "level": 2,
+                  "text": "59. Psalm 96:8-9",
+                  "slug": "59-psalm-96-8-9"
+                },
+                {
+                  "level": 2,
+                  "text": "60. Psalm 116:12-14",
+                  "slug": "60-psalm-116-12-14"
+                },
+                {
+                  "level": 2,
+                  "text": "61. Haggai 2:8",
+                  "slug": "61-haggai-2-8"
+                },
+                {
+                  "level": 2,
+                  "text": "62. Zechariah 7:9",
+                  "slug": "62-zechariah-7-9"
+                },
+                {
+                  "level": 2,
+                  "text": "63. Matthew 7:12",
+                  "slug": "63-matthew-7-12"
+                },
+                {
+                  "level": 2,
+                  "text": "64. Matthew 25:40",
+                  "slug": "64-matthew-25-40"
+                },
+                {
+                  "level": 2,
+                  "text": "65. Luke 12:48",
+                  "slug": "65-luke-12-48"
+                },
+                {
+                  "level": 2,
+                  "text": "66. Acts 20:35",
+                  "slug": "66-acts-20-35"
+                },
+                {
+                  "level": 2,
+                  "text": "67. 2 Corinthians 8:9",
+                  "slug": "67-2-corinthians-8-9"
+                },
+                {
+                  "level": 2,
+                  "text": "68. 2 Corinthians 9:7",
+                  "slug": "68-2-corinthians-9-7"
+                },
+                {
+                  "level": 2,
+                  "text": "69. Colossians 3:17",
+                  "slug": "69-colossians-3-17"
+                },
+                {
+                  "level": 2,
+                  "text": "70. Colossians 3:23",
+                  "slug": "70-colossians-3-23"
+                },
+                {
+                  "level": 2,
+                  "text": "71. Hebrews 13:16",
+                  "slug": "71-hebrews-13-16"
+                }
+              ]
             }
           ]
         }

@@ -48,40 +48,109 @@ def slugify_heading(text: str) -> str:
     return slug or "section"
 
 
-def extract_headings_and_stats(md_text: str) -> tuple[list[dict[str, Any]], int, int]:
-    """Extract ## and ### headings (deduplicating slugs across h2..h4), body word count, and footnote count."""
-    if "\n---\n" in md_text:
-        body, fn_sec = md_text.rsplit("\n---\n", 1)
-    elif "\r\n---\r\n" in md_text:
-        body, fn_sec = md_text.rsplit("\r\n---\r\n", 1)
-    else:
-        body, fn_sec = md_text, ""
+NUMBERED_READING_RE = re.compile(
+    r"^\d+\.\s+(?:[1-3]\s+)?(?:Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|"
+    r"Samuel|Kings|Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song|"
+    r"Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|"
+    r"Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|"
+    r"Corinthians|Galatians|Ephesians|Philippians|Colossians|Thessalonians|Timothy|Titus|"
+    r"Philemon|Hebrews|James|Peter|Jude|Revelation)\s+\d+",
+    re.I,
+)
 
-    # Count footnote definitions anywhere (in case a file doesn't use --- separator)
+BAPTISM_CUE_RE = re.compile(
+    r"^(?:Why do we baptise.+\?|(?:Question to Parents|Question to the congregation[^:]*|"
+    r"Baptism|Baptismal prayer|Address to Parents|Prayer of thanksgiving):)$",
+    re.I,
+)
+
+
+def detect_implicit_heading(
+    trimmed: str,
+    *,
+    has_explicit_h2: bool,
+    is_liturgical_form: bool,
+    is_readings_doc: bool,
+    next_line_is_blank: bool,
+) -> tuple[int | None, str] | None:
+    """Mirror extension/markdown.js detectImplicitHeading() for deterministic TOCs."""
+    if not trimmed or trimmed.startswith("#") or trimmed.startswith("|"):
+        return None
+
+    if is_readings_doc and next_line_is_blank and NUMBERED_READING_RE.match(trimmed):
+        return (None if has_explicit_h2 else 2, trimmed)
+
+    if is_liturgical_form and not has_explicit_h2 and next_line_is_blank:
+        if not re.match(r"^(?:THE LORD|AND)\s+", trimmed) and not re.search(r"[.:;,]$", trimmed):
+            stripped = re.sub(r"^\d+\.\s+", "", trimmed)
+            stripped = re.sub(r"\[\^[^\]]+\]", "", stripped)
+            stripped = re.sub(r"\(optional\)", "", stripped, flags=re.I).strip()
+            if 3 <= len(stripped) <= 85 and re.search(r"[A-Z]{3}", stripped) and not re.search(r"[a-z]", stripped):
+                return (2, trimmed)
+
+        if BAPTISM_CUE_RE.match(trimmed):
+            return (2, trimmed)
+
+    return None
+
+
+def extract_headings_and_stats(md_text: str, rel_posix: str = "") -> tuple[list[dict[str, Any]], int, int]:
+    """Extract explicit & implicit headings (deduplicating slugs), body word count, and footnote count."""
+    if "\n---\n" in md_text:
+        body, _ = md_text.rsplit("\n---\n", 1)
+    elif "\r\n---\r\n" in md_text:
+        body, _ = md_text.rsplit("\r\n---\r\n", 1)
+    else:
+        body = md_text
+
     fn_defs = re.findall(r"^\[\^[^\]]+\]:", md_text, re.M)
     footnote_count = len(fn_defs)
 
-    # Remove inline footnote definitions if there wasn't a --- divider
     body_clean = re.sub(r"^\[\^[^\]]+\]:.*$", "", body, flags=re.M)
     body_no_markers = re.sub(r"\[\^[^\]]+\]", "", body_clean)
     word_count = len(re.findall(r"\b\w+\b", body_no_markers))
 
+    is_liturgical_form = rel_posix.startswith("The Liturgical Forms/")
+    is_readings_doc = rel_posix.startswith("Other Resources/")
+    lines = body_clean.splitlines()
+    has_explicit_h2 = any(re.match(r"^#{2,4}\s+", ln.strip()) for ln in lines)
+
     headings: list[dict[str, Any]] = []
     seen_slugs: dict[str, int] = {}
 
-    for line in body.splitlines():
-        m = re.match(r"^(#{2,4})\s+(.+?)\s*$", line)
-        if not m:
+    for idx, line in enumerate(lines):
+        trimmed = line.strip()
+        if not trimmed:
             continue
-        level = len(m.group(1))
-        raw_text = m.group(2)
-        display_text = re.sub(r"\[\^[^\]]+\]", "", raw_text).replace("**", "").replace("*", "").strip()
-        base = slugify_heading(raw_text)
-        count = seen_slugs.get(base, 0) + 1
-        seen_slugs[base] = count
-        slug = base if count == 1 else f"{base}-{count}"
-        if level in (2, 3):
-            headings.append({"level": level, "text": display_text, "slug": slug})
+        m = re.match(r"^(#{2,4})\s+(.+?)\s*$", trimmed)
+        toc_level: int | None = None
+        raw_text: str | None = None
+
+        if m:
+            level = len(m.group(1))
+            raw_text = m.group(2)
+            if level in (2, 3):
+                toc_level = level
+        else:
+            next_blank = idx + 1 >= len(lines) or lines[idx + 1].strip() == ""
+            imp = detect_implicit_heading(
+                trimmed,
+                has_explicit_h2=has_explicit_h2,
+                is_liturgical_form=is_liturgical_form,
+                is_readings_doc=is_readings_doc,
+                next_line_is_blank=next_blank,
+            )
+            if imp is not None:
+                toc_level, raw_text = imp
+
+        if raw_text is not None:
+            display_text = re.sub(r"\[\^[^\]]+\]", "", raw_text).replace("**", "").replace("*", "").strip()
+            base = slugify_heading(raw_text)
+            count = seen_slugs.get(base, 0) + 1
+            seen_slugs[base] = count
+            slug = base if count == 1 else f"{base}-{count}"
+            if toc_level is not None:
+                headings.append({"level": toc_level, "text": display_text, "slug": slug})
 
     return headings, word_count, footnote_count
 
@@ -115,7 +184,7 @@ def build_doc_entry(
     if pdf_path is not None and not (REPO_ROOT / pdf_path).exists():
         raise FileNotFoundError(f"Mapped PDF missing: {pdf_path}")
 
-    headings, word_count, footnote_count = extract_headings_and_stats(md_text)
+    headings, word_count, footnote_count = extract_headings_and_stats(md_text, rel_posix)
 
     index_item = {
         "id": doc_id,
@@ -197,7 +266,26 @@ def collect_categories() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
 
     categories.append({"id": lf_id, "title": lf_title, "groups": lf_groups})
 
-    # 3. Other Resources
+    # 3. Church Order
+    co_id = "church-order"
+    co_title = "Church Order"
+    co_dir = REPO_ROOT / "Church Order"
+    if co_dir.exists():
+        co_items = []
+        for f in sorted(co_dir.glob("*.md")):
+            item, s_item = build_doc_entry(f, co_id, co_title, "Church Order")
+            co_items.append(item)
+            search_docs.append(s_item)
+        if co_items:
+            categories.append(
+                {
+                    "id": co_id,
+                    "title": co_title,
+                    "groups": [{"id": "church-order", "title": "Church Order", "items": co_items}],
+                }
+            )
+
+    # 4. Other Resources
     or_id = "other-resources"
     or_title = "Other Resources"
     or_dir = REPO_ROOT / "Other Resources"
@@ -232,8 +320,8 @@ def main() -> int:
     categories, search_docs = collect_categories()
     doc_count = sum(len(g["items"]) for c in categories for g in c["groups"])
 
-    if doc_count != 38:
-        print(f"ERROR: Expected 38 documents, found {doc_count}", file=sys.stderr)
+    if doc_count != 40:
+        print(f"ERROR: Expected 40 documents, found {doc_count}", file=sys.stderr)
         return 1
 
     # Verify every referenced path exists on disk

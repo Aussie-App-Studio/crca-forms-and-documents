@@ -6,13 +6,14 @@ A structured, open-format repository of **Christian Reformed Churches of Austral
 
 - **`Creeds and Confessions/`**
   - **`01 - Ecumenical Creeds/`**: The Apostles' Creed, The Nicene Creed, and The Athanasian Creed (in Markdown, matching the CRCA *Book of Worship* / website wording).
-  - **`02 - Reformed Confessions/`**: The Belgic Confession, The Heidelberg Catechism, and The Canons of Dort (converted to Markdown with interactive `[^id]` Scripture footnotes), plus the original PDFs in the repository root (`CRCA BelgicConfession.pdf`, `CRCA HeidelbergCatechism.pdf`, `CRCA CanonsofDort.pdf`).
+  - **`02 - Reformed Confessions/`**: The Belgic Confession, The Heidelberg Catechism, The Canons of Dort (converted to Markdown with interactive `[^id]` Scripture footnotes, plus the original PDFs in the repository root: `CRCA BelgicConfession.pdf`, `CRCA HeidelbergCatechism.pdf`, `CRCA CanonsofDort.pdf`), and The Westminster Confession of Faith.
 - **`01 - Form of Subscription.md`**: The CRCA Form of Subscription (including the 1957 Synod footnote regarding the Westminster Confession).
 - **`The Liturgical Forms/`**: Baptism (Children I–IV & Adults), Public Profession of Faith, Lord's Supper (Preparation I–II & Celebration I–V), Church Discipline, Ordination & Installation of Office Bearers, Marriage, and Funerals.
+- **`Church Order/`**: The CRCA Church Order (`01 - CRCA Church Order (2022).md`, `crca-book-of-order-2022.json`, and source `CRCA Book of Church Order 2022.docx` in root).
 - **`Other Resources/`**: Alternatives & Options, Calls to Worship, Greetings & Benedictions, Readings of the Law, Assurances of Pardon, and Readings at the Offerings.
 - **`index.json`** & **`search-index.json`**: Generated catalog and full-text search index used by the Chrome extension (and future mobile app).
 - **`extension/`**: Zero-dependency Manifest V3 Chrome extension (Popup, Side Panel, Full Tab, Print/PDF export, Clean Copy, and Offline Cache).
-- **`scripts/`**: Maintenance utilities (`convert_pdfs.py`, `build_index.py`, `generate_icons.py`, `serve_local.py`).
+- **`scripts/`**: Maintenance utilities (`convert_pdfs.py`, `convert_church_order.py`, `convert_wcf.py`, `build_index.py`, `generate_icons.py`, `serve_local.py`).
 
 ---
 
