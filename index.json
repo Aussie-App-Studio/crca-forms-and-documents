@@ -1,0 +1,1407 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-20T14:25:08+00:00",
+  "repoDefault": {
+    "owner": "Aussie-App-Studio",
+    "repo": "crca-forms-and-documents",
+    "branch": "main"
+  },
+  "documentCount": 38,
+  "categories": [
+    {
+      "id": "creeds-and-confessions",
+      "title": "Creeds & Confessions",
+      "groups": [
+        {
+          "id": "ecumenical-creeds",
+          "title": "Ecumenical Creeds",
+          "items": [
+            {
+              "id": "creeds-and-confessions-01-ecumenical-creeds-01-the-apostles-creed",
+              "title": "The Apostles' Creed",
+              "path": "Creeds and Confessions/01 - Ecumenical Creeds/01 - The Apostles' Creed.md",
+              "pdfPath": null,
+              "wordCount": 227,
+              "footnoteCount": 1,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Introduction",
+                  "slug": "introduction"
+                },
+                {
+                  "level": 2,
+                  "text": "Text",
+                  "slug": "text"
+                }
+              ]
+            },
+            {
+              "id": "creeds-and-confessions-01-ecumenical-creeds-02-the-nicene-creed",
+              "title": "The Nicene Creed",
+              "path": "Creeds and Confessions/01 - Ecumenical Creeds/02 - The Nicene Creed.md",
+              "pdfPath": null,
+              "wordCount": 408,
+              "footnoteCount": 0,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Introduction",
+                  "slug": "introduction"
+                },
+                {
+                  "level": 2,
+                  "text": "Text",
+                  "slug": "text"
+                }
+              ]
+            },
+            {
+              "id": "creeds-and-confessions-01-ecumenical-creeds-03-the-athanasian-creed",
+              "title": "The Athanasian Creed",
+              "path": "Creeds and Confessions/01 - Ecumenical Creeds/03 - The Athanasian Creed.md",
+              "pdfPath": null,
+              "wordCount": 824,
+              "footnoteCount": 0,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Introduction",
+                  "slug": "introduction"
+                },
+                {
+                  "level": 2,
+                  "text": "Text",
+                  "slug": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reformed-confessions",
+          "title": "Reformed Confessions",
+          "items": [
+            {
+              "id": "creeds-and-confessions-02-reformed-confessions-01-the-belgic-confession",
+              "title": "The Belgic Confession",
+              "path": "Creeds and Confessions/02 - Reformed Confessions/01 - The Belgic Confession.md",
+              "pdfPath": "CRCA BelgicConfession.pdf",
+              "wordCount": 10052,
+              "footnoteCount": 91,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Introduction",
+                  "slug": "introduction"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 1: The Only God",
+                  "slug": "article-1-the-only-god"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 2: The Means by Which We Know God",
+                  "slug": "article-2-the-means-by-which-we-know-god"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 3: The Written Word of God",
+                  "slug": "article-3-the-written-word-of-god"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 4: The Canonical Books",
+                  "slug": "article-4-the-canonical-books"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 5: The Authority of Scripture",
+                  "slug": "article-5-the-authority-of-scripture"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 6: The Difference Between Canonical and Apocryphal Books",
+                  "slug": "article-6-the-difference-between-canonical-and-apocryphal-books"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 7: The Sufficiency of Scripture",
+                  "slug": "article-7-the-sufficiency-of-scripture"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 8: The Trinity",
+                  "slug": "article-8-the-trinity"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 9: The Scriptural Witness on the Trinity",
+                  "slug": "article-9-the-scriptural-witness-on-the-trinity"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 10: The Deity of Christ",
+                  "slug": "article-10-the-deity-of-christ"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 11: The Deity of the Holy Spirit",
+                  "slug": "article-11-the-deity-of-the-holy-spirit"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 12: The Creation of All Things",
+                  "slug": "article-12-the-creation-of-all-things"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 13: The Doctrine of God’s Providence",
+                  "slug": "article-13-the-doctrine-of-gods-providence"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 14: The Creation and Fall of Humanity",
+                  "slug": "article-14-the-creation-and-fall-of-humanity"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 15: The Doctrine of Original Sin",
+                  "slug": "article-15-the-doctrine-of-original-sin"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 16: The Doctrine of Election",
+                  "slug": "article-16-the-doctrine-of-election"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 17: The Recovery of Fallen Humanity",
+                  "slug": "article-17-the-recovery-of-fallen-humanity"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 18: The Incarnation",
+                  "slug": "article-18-the-incarnation"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 19: The Two Natures of Christ",
+                  "slug": "article-19-the-two-natures-of-christ"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 20: The Justice and Mercy of God in Christ",
+                  "slug": "article-20-the-justice-and-mercy-of-god-in-christ"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 21: The Atonement",
+                  "slug": "article-21-the-atonement"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 22: The Righteousness of Faith",
+                  "slug": "article-22-the-righteousness-of-faith"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 23: The Justification of Sinners",
+                  "slug": "article-23-the-justification-of-sinners"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 24: The Sanctification of Sinners",
+                  "slug": "article-24-the-sanctification-of-sinners"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 25: The Fulfillment of the Law",
+                  "slug": "article-25-the-fulfillment-of-the-law"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 26: The Intercession of Christ",
+                  "slug": "article-26-the-intercession-of-christ"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 27: The Holy Catholic Church",
+                  "slug": "article-27-the-holy-catholic-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 28: The Obligations of Church Members",
+                  "slug": "article-28-the-obligations-of-church-members"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 29: The Marks of the True Church",
+                  "slug": "article-29-the-marks-of-the-true-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 30: The Government of the Church",
+                  "slug": "article-30-the-government-of-the-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 31: The Officers of the Church",
+                  "slug": "article-31-the-officers-of-the-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 32: The Order and Discipline of the Church",
+                  "slug": "article-32-the-order-and-discipline-of-the-church"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 33: The Sacraments",
+                  "slug": "article-33-the-sacraments"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 34: The Sacrament of Baptism",
+                  "slug": "article-34-the-sacrament-of-baptism"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 35: The Sacrament of the Lord’s Supper",
+                  "slug": "article-35-the-sacrament-of-the-lords-supper"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 36: The Civil Government",
+                  "slug": "article-36-the-civil-government"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 37: The Last Judgment",
+                  "slug": "article-37-the-last-judgment"
+                }
+              ]
+            },
+            {
+              "id": "creeds-and-confessions-02-reformed-confessions-02-the-heidelberg-catechism",
+              "title": "The Heidelberg Catechism",
+              "path": "Creeds and Confessions/02 - Reformed Confessions/02 - The Heidelberg Catechism.md",
+              "pdfPath": "CRCA HeidelbergCatechism.pdf",
+              "wordCount": 8949,
+              "footnoteCount": 361,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Introduction",
+                  "slug": "introduction"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 1",
+                  "slug": "lords-day-1"
+                },
+                {
+                  "level": 2,
+                  "text": "Part I: Misery",
+                  "slug": "part-i-misery"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 2",
+                  "slug": "lords-day-2"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 3",
+                  "slug": "lords-day-3"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 4",
+                  "slug": "lords-day-4"
+                },
+                {
+                  "level": 2,
+                  "text": "Part II: Deliverance",
+                  "slug": "part-ii-deliverance"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 5",
+                  "slug": "lords-day-5"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 6",
+                  "slug": "lords-day-6"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 7",
+                  "slug": "lords-day-7"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 8",
+                  "slug": "lords-day-8"
+                },
+                {
+                  "level": 2,
+                  "text": "God the Father",
+                  "slug": "god-the-father"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 9",
+                  "slug": "lords-day-9"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 10",
+                  "slug": "lords-day-10"
+                },
+                {
+                  "level": 2,
+                  "text": "God the Son",
+                  "slug": "god-the-son"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 11",
+                  "slug": "lords-day-11"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 12",
+                  "slug": "lords-day-12"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 13",
+                  "slug": "lords-day-13"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 14",
+                  "slug": "lords-day-14"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 15",
+                  "slug": "lords-day-15"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 16",
+                  "slug": "lords-day-16"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 17",
+                  "slug": "lords-day-17"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 18",
+                  "slug": "lords-day-18"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 19",
+                  "slug": "lords-day-19"
+                },
+                {
+                  "level": 2,
+                  "text": "God the Holy Spirit",
+                  "slug": "god-the-holy-spirit"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 20",
+                  "slug": "lords-day-20"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 21",
+                  "slug": "lords-day-21"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 22",
+                  "slug": "lords-day-22"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 23",
+                  "slug": "lords-day-23"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 24",
+                  "slug": "lords-day-24"
+                },
+                {
+                  "level": 2,
+                  "text": "The Holy Sacraments",
+                  "slug": "the-holy-sacraments"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 25",
+                  "slug": "lords-day-25"
+                },
+                {
+                  "level": 2,
+                  "text": "Holy Baptism",
+                  "slug": "holy-baptism"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 26",
+                  "slug": "lords-day-26"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 27",
+                  "slug": "lords-day-27"
+                },
+                {
+                  "level": 2,
+                  "text": "The Holy Supper of Jesus Christ",
+                  "slug": "the-holy-supper-of-jesus-christ"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 28",
+                  "slug": "lords-day-28"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 29",
+                  "slug": "lords-day-29"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 30",
+                  "slug": "lords-day-30"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 31",
+                  "slug": "lords-day-31"
+                },
+                {
+                  "level": 2,
+                  "text": "Part III: Gratitude",
+                  "slug": "part-iii-gratitude"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 32",
+                  "slug": "lords-day-32"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 33",
+                  "slug": "lords-day-33"
+                },
+                {
+                  "level": 2,
+                  "text": "The Ten Commandments",
+                  "slug": "the-ten-commandments"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 34",
+                  "slug": "lords-day-34"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 35",
+                  "slug": "lords-day-35"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 36",
+                  "slug": "lords-day-36"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 37",
+                  "slug": "lords-day-37"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 38",
+                  "slug": "lords-day-38"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 39",
+                  "slug": "lords-day-39"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 40",
+                  "slug": "lords-day-40"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 41",
+                  "slug": "lords-day-41"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 42",
+                  "slug": "lords-day-42"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 43",
+                  "slug": "lords-day-43"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 44",
+                  "slug": "lords-day-44"
+                },
+                {
+                  "level": 2,
+                  "text": "The Lord’s Prayer",
+                  "slug": "the-lords-prayer"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 45",
+                  "slug": "lords-day-45"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 46",
+                  "slug": "lords-day-46"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 47",
+                  "slug": "lords-day-47"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 48",
+                  "slug": "lords-day-48"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 49",
+                  "slug": "lords-day-49"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 50",
+                  "slug": "lords-day-50"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 51",
+                  "slug": "lords-day-51"
+                },
+                {
+                  "level": 3,
+                  "text": "Lord's Day 52",
+                  "slug": "lords-day-52"
+                }
+              ]
+            },
+            {
+              "id": "creeds-and-confessions-02-reformed-confessions-03-the-canons-of-dort",
+              "title": "The Canons of Dort",
+              "path": "Creeds and Confessions/02 - Reformed Confessions/03 - The Canons of Dort.md",
+              "pdfPath": "CRCA CanonsofDort.pdf",
+              "wordCount": 12559,
+              "footnoteCount": 86,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Introduction",
+                  "slug": "introduction"
+                },
+                {
+                  "level": 2,
+                  "text": "First Main Point of Doctrine: Divine Election and Reprobation",
+                  "slug": "first-main-point-of-doctrine-divine-election-and-reprobation"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 1: God's Right to Condemn All People",
+                  "slug": "article-1-gods-right-to-condemn-all-people"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 2: The Manifestation of God's Love",
+                  "slug": "article-2-the-manifestation-of-gods-love"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 3: The Preaching of the Gospel",
+                  "slug": "article-3-the-preaching-of-the-gospel"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 4: A Twofold Response to the Gospel",
+                  "slug": "article-4-a-twofold-response-to-the-gospel"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 5: The Sources of Unbelief and of Faith",
+                  "slug": "article-5-the-sources-of-unbelief-and-of-faith"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 6: God's Eternal Decision",
+                  "slug": "article-6-gods-eternal-decision"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 7: Election",
+                  "slug": "article-7-election"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 8: A Single Decision of Election",
+                  "slug": "article-8-a-single-decision-of-election"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 9: Election Not Based on Foreseen Faith",
+                  "slug": "article-9-election-not-based-on-foreseen-faith"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 10: Election Based on God's Good Pleasure",
+                  "slug": "article-10-election-based-on-gods-good-pleasure"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 11: Election Unchangeable",
+                  "slug": "article-11-election-unchangeable"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 12: The Assurance of Election",
+                  "slug": "article-12-the-assurance-of-election"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 13: The Fruit of this Assurance",
+                  "slug": "article-13-the-fruit-of-this-assurance"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 14: Teaching Election Properly",
+                  "slug": "article-14-teaching-election-properly"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 15: Reprobation",
+                  "slug": "article-15-reprobation"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 16: Responses to the Teaching of Reprobation",
+                  "slug": "article-16-responses-to-the-teaching-of-reprobation"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 17: The Salvation of the Infants of Believers",
+                  "slug": "article-17-the-salvation-of-the-infants-of-believers"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 18: The Proper Attitude Toward Election and Reprobation",
+                  "slug": "article-18-the-proper-attitude-toward-election-and-reprobation"
+                },
+                {
+                  "level": 3,
+                  "text": "Rejection of the Errors by which the Dutch Churches have for some time been disturbed",
+                  "slug": "rejection-of-the-errors-by-which-the-dutch-churches-have-for-some-time-been-disturbed"
+                },
+                {
+                  "level": 2,
+                  "text": "Second Main Point of Doctrine: Christ's Death and Human Redemption Through It",
+                  "slug": "second-main-point-of-doctrine-christs-death-and-human-redemption-through-it"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 1: The Punishment Which God's Justice Requires",
+                  "slug": "article-1-the-punishment-which-gods-justice-requires"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 2: The Satisfaction Made by Christ",
+                  "slug": "article-2-the-satisfaction-made-by-christ"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 3: The Infinite Value of Christ's Death",
+                  "slug": "article-3-the-infinite-value-of-christs-death"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 4: Reasons for This Infinite Value",
+                  "slug": "article-4-reasons-for-this-infinite-value"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 5: The Mandate to Proclaim the Gospel to All",
+                  "slug": "article-5-the-mandate-to-proclaim-the-gospel-to-all"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 6: Unbelief Man's Responsibility",
+                  "slug": "article-6-unbelief-mans-responsibility"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 7: Faith God's Gift",
+                  "slug": "article-7-faith-gods-gift"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 8: The Saving Effectiveness of Christ's Death",
+                  "slug": "article-8-the-saving-effectiveness-of-christs-death"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 9: The Fulfillment of God's Plan",
+                  "slug": "article-9-the-fulfillment-of-gods-plan"
+                },
+                {
+                  "level": 3,
+                  "text": "Rejection of the Errors",
+                  "slug": "rejection-of-the-errors"
+                },
+                {
+                  "level": 2,
+                  "text": "Third and Fourth Main Points of Doctrine: Human Corruption, Conversion to God and the Way it Occurs",
+                  "slug": "third-and-fourth-main-points-of-doctrine-human-corruption-conversion-to-god-and-the-way-it-occurs"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 1: The Effect of the Fall on Human Nature",
+                  "slug": "article-1-the-effect-of-the-fall-on-human-nature"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 2: The Spread of Corruption",
+                  "slug": "article-2-the-spread-of-corruption"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 3: Total Inability",
+                  "slug": "article-3-total-inability"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 4: The Inadequacy of the Light of Nature",
+                  "slug": "article-4-the-inadequacy-of-the-light-of-nature"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 5: The Inadequacy of the Law",
+                  "slug": "article-5-the-inadequacy-of-the-law"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 6: The Saving Power of the Gospel",
+                  "slug": "article-6-the-saving-power-of-the-gospel"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 7: God's Freedom in Revealing the Gospel",
+                  "slug": "article-7-gods-freedom-in-revealing-the-gospel"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 8: The Serious Call of the Gospel",
+                  "slug": "article-8-the-serious-call-of-the-gospel"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 9: Human Responsibility for Rejecting the Gospel",
+                  "slug": "article-9-human-responsibility-for-rejecting-the-gospel"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 10: Conversion as the Work of God",
+                  "slug": "article-10-conversion-as-the-work-of-god"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 11: The Holy Spirit's Work in Conversion",
+                  "slug": "article-11-the-holy-spirits-work-in-conversion"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 12: Regeneration a Supernatural Work",
+                  "slug": "article-12-regeneration-a-supernatural-work"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 13: The Incomprehensible Way of Regeneration",
+                  "slug": "article-13-the-incomprehensible-way-of-regeneration"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 14: The Way God Gives Faith",
+                  "slug": "article-14-the-way-god-gives-faith"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 15: Responses to God's Grace",
+                  "slug": "article-15-responses-to-gods-grace"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 16: Regeneration's Effect",
+                  "slug": "article-16-regenerations-effect"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 17: God's Use of Means in Regeneration",
+                  "slug": "article-17-gods-use-of-means-in-regeneration"
+                },
+                {
+                  "level": 3,
+                  "text": "Rejection of the Errors",
+                  "slug": "rejection-of-the-errors-2"
+                },
+                {
+                  "level": 2,
+                  "text": "Fifth Main Point of Doctrine: The Perseverance of the Saints",
+                  "slug": "fifth-main-point-of-doctrine-the-perseverance-of-the-saints"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 1: The Regenerate Not Entirely Free from Sin",
+                  "slug": "article-1-the-regenerate-not-entirely-free-from-sin"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 2: The Believer's Reaction to Sins of Weakness",
+                  "slug": "article-2-the-believers-reaction-to-sins-of-weakness"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 3: God's Preservation of the Converted",
+                  "slug": "article-3-gods-preservation-of-the-converted"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 4: The Danger of True Believers' Falling into Serious Sins",
+                  "slug": "article-4-the-danger-of-true-believers-falling-into-serious-sins"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 5: The Effects of Such Serious Sins",
+                  "slug": "article-5-the-effects-of-such-serious-sins"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 6: God's Saving Intervention",
+                  "slug": "article-6-gods-saving-intervention"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 7: Renewal to Repentance",
+                  "slug": "article-7-renewal-to-repentance"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 8: The Certainty of this Preservation",
+                  "slug": "article-8-the-certainty-of-this-preservation"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 9: The Assurance of this Preservation",
+                  "slug": "article-9-the-assurance-of-this-preservation"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 10: The Ground of This Assurance",
+                  "slug": "article-10-the-ground-of-this-assurance"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 11: Doubts Concerning this Assurance",
+                  "slug": "article-11-doubts-concerning-this-assurance"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 12: This Assurance as an Incentive to Godliness",
+                  "slug": "article-12-this-assurance-as-an-incentive-to-godliness"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 13: Assurance No Inducement to Carelessness",
+                  "slug": "article-13-assurance-no-inducement-to-carelessness"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 14: God's Use of Means in Perseverance",
+                  "slug": "article-14-gods-use-of-means-in-perseverance"
+                },
+                {
+                  "level": 3,
+                  "text": "Article 15: Contrasting Reactions to the Teaching of Perseverance",
+                  "slug": "article-15-contrasting-reactions-to-the-teaching-of-perseverance"
+                },
+                {
+                  "level": 3,
+                  "text": "Rejection of the Errors Concerning the Teaching of the Perseverance of the Saints",
+                  "slug": "rejection-of-the-errors-concerning-the-teaching-of-the-perseverance-of-the-saints"
+                },
+                {
+                  "level": 2,
+                  "text": "Conclusion: Rejection of False Accusations",
+                  "slug": "conclusion-rejection-of-false-accusations"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "form-of-subscription",
+          "title": "Form of Subscription",
+          "items": [
+            {
+              "id": "01-form-of-subscription",
+              "title": "Form of Subscription",
+              "path": "01 - Form of Subscription.md",
+              "pdfPath": null,
+              "wordCount": 390,
+              "footnoteCount": 1,
+              "headings": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liturgical-forms",
+      "title": "The Liturgical Forms",
+      "groups": [
+        {
+          "id": "liturgical-forms-baptism",
+          "title": "Baptism",
+          "items": [
+            {
+              "id": "the-liturgical-forms-01-baptism-01-form-for-the-baptism-of-the-children-of-believers-i",
+              "title": "Form for the Baptism of the Children of Believers (I)",
+              "path": "The Liturgical Forms/01 - Baptism/01 - Form for the Baptism of the Children of Believers (I).md",
+              "pdfPath": null,
+              "wordCount": 1290,
+              "footnoteCount": 16,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-01-baptism-02-form-for-the-baptism-of-the-children-of-believers-ii",
+              "title": "Form for the Baptism of the Children of Believers (II)",
+              "path": "The Liturgical Forms/01 - Baptism/02 - Form for the Baptism of the Children of Believers (II).md",
+              "pdfPath": null,
+              "wordCount": 956,
+              "footnoteCount": 18,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-01-baptism-03-form-for-the-baptism-of-children-of-believers-iii",
+              "title": "Form for the Baptism of Children of Believers (III)",
+              "path": "The Liturgical Forms/01 - Baptism/03 - Form for the Baptism of Children of Believers (III).md",
+              "pdfPath": null,
+              "wordCount": 1851,
+              "footnoteCount": 12,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-01-baptism-04-form-for-the-baptism-of-the-children-of-believers-iv",
+              "title": "Form for the Baptism of the Children of Believers (IV)",
+              "path": "The Liturgical Forms/01 - Baptism/04 - Form for the Baptism of the Children of Believers (IV).md",
+              "pdfPath": null,
+              "wordCount": 1416,
+              "footnoteCount": 11,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-01-baptism-05-form-for-the-baptism-of-adults",
+              "title": "Form for the Baptism of Adults",
+              "path": "The Liturgical Forms/01 - Baptism/05 - Form for the Baptism of Adults.md",
+              "pdfPath": null,
+              "wordCount": 2995,
+              "footnoteCount": 15,
+              "headings": []
+            }
+          ]
+        },
+        {
+          "id": "liturgical-forms-form-for-public-profession-of-faith",
+          "title": "Form for Public Profession of Faith",
+          "items": [
+            {
+              "id": "the-liturgical-forms-02-form-for-public-profession-of-faith",
+              "title": "Form for Public Profession of Faith",
+              "path": "The Liturgical Forms/02 - Form for Public Profession of Faith.md",
+              "pdfPath": null,
+              "wordCount": 1361,
+              "footnoteCount": 4,
+              "headings": []
+            }
+          ]
+        },
+        {
+          "id": "liturgical-forms-the-lords-supper",
+          "title": "The Lord's Supper",
+          "items": [
+            {
+              "id": "the-liturgical-forms-03-the-lords-supper-01-form-for-the-preparation-of-the-lords-supper-i",
+              "title": "Form for the Preparation of the Lord's Supper (I)",
+              "path": "The Liturgical Forms/03 - The Lord's Supper/01 - Form for the Preparation of the Lord's Supper (I).md",
+              "pdfPath": null,
+              "wordCount": 854,
+              "footnoteCount": 19,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-03-the-lords-supper-02-form-for-the-preparation-of-the-lords-supper-ii",
+              "title": "Form for the Preparation of the Lord's Supper (II)",
+              "path": "The Liturgical Forms/03 - The Lord's Supper/02 - Form for the Preparation of the Lord's Supper (II).md",
+              "pdfPath": null,
+              "wordCount": 257,
+              "footnoteCount": 1,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-03-the-lords-supper-03-form-for-the-celebration-of-the-lords-supper-i",
+              "title": "Form for the Celebration of the Lord's Supper (I)",
+              "path": "The Liturgical Forms/03 - The Lord's Supper/03 - Form for the Celebration of the Lord's Supper (I).md",
+              "pdfPath": null,
+              "wordCount": 2432,
+              "footnoteCount": 33,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-03-the-lords-supper-04-form-for-the-celebration-of-the-lords-supper-ii",
+              "title": "Form for the Celebration of the Lord's Supper (II)",
+              "path": "The Liturgical Forms/03 - The Lord's Supper/04 - Form for the Celebration of the Lord's Supper (II).md",
+              "pdfPath": null,
+              "wordCount": 2120,
+              "footnoteCount": 28,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-03-the-lords-supper-05-form-for-the-celebration-of-the-lords-supper-iii",
+              "title": "Form for the Celebration of the Lord's Supper (III)",
+              "path": "The Liturgical Forms/03 - The Lord's Supper/05 - Form for the Celebration of the Lord's Supper (III).md",
+              "pdfPath": null,
+              "wordCount": 1000,
+              "footnoteCount": 8,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-03-the-lords-supper-06-form-for-the-celebration-of-the-lords-supper-iv",
+              "title": "Form for the Celebration of the Lord's Supper (IV)",
+              "path": "The Liturgical Forms/03 - The Lord's Supper/06 - Form for the Celebration of the Lord's Supper (IV).md",
+              "pdfPath": null,
+              "wordCount": 1252,
+              "footnoteCount": 9,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-03-the-lords-supper-07-form-for-the-celebration-of-the-lords-supper-v",
+              "title": "Form for the Celebration of the Lord's Supper (V)",
+              "path": "The Liturgical Forms/03 - The Lord's Supper/07 - Form for the Celebration of the Lord's Supper (V).md",
+              "pdfPath": null,
+              "wordCount": 1015,
+              "footnoteCount": 10,
+              "headings": []
+            }
+          ]
+        },
+        {
+          "id": "liturgical-forms-discipline",
+          "title": "Discipline",
+          "items": [
+            {
+              "id": "the-liturgical-forms-04-discipline-01-public-exhortations-re-communicant-members",
+              "title": "Public Exhortations re Communicant Members",
+              "path": "The Liturgical Forms/04 - Discipline/01 - Public Exhortations re Communicant Members.md",
+              "pdfPath": null,
+              "wordCount": 497,
+              "footnoteCount": 3,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-04-discipline-02-form-for-excommunication",
+              "title": "Form for Excommunication",
+              "path": "The Liturgical Forms/04 - Discipline/02 - Form for Excommunication.md",
+              "pdfPath": null,
+              "wordCount": 1172,
+              "footnoteCount": 16,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-04-discipline-03-public-announcement-for-the-re-admission-of-excommunicated-persons",
+              "title": "Public Announcement for the Re-Admission of Excommunicated Persons",
+              "path": "The Liturgical Forms/04 - Discipline/03 - Public Announcement for the Re-Admission of Excommunicated Persons.md",
+              "pdfPath": null,
+              "wordCount": 205,
+              "footnoteCount": 4,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-04-discipline-04-form-for-the-re-admission-of-excommunicated-persons",
+              "title": "Form for the Re-Admission of Excommunicated Persons",
+              "path": "The Liturgical Forms/04 - Discipline/04 - Form for the Re-Admission of Excommunicated Persons.md",
+              "pdfPath": null,
+              "wordCount": 978,
+              "footnoteCount": 14,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-04-discipline-05-baptised-members-living-in-unbelief-and-sin",
+              "title": "Baptised Members Living in Unbelief and Sin",
+              "path": "The Liturgical Forms/04 - Discipline/05 - Baptised Members Living in Unbelief and Sin.md",
+              "pdfPath": null,
+              "wordCount": 223,
+              "footnoteCount": 0,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-04-discipline-06-resignation-erasure-and-re-admission-of-communicant-members",
+              "title": "Resignation, Erasure and Re-Admission of Communicant Members",
+              "path": "The Liturgical Forms/04 - Discipline/06 - Resignation, Erasure and Re-Admission of Communicant Members.md",
+              "pdfPath": null,
+              "wordCount": 215,
+              "footnoteCount": 0,
+              "headings": []
+            }
+          ]
+        },
+        {
+          "id": "liturgical-forms-ordination-and-installation-of-office-bearers",
+          "title": "Ordination and Installation of Office Bearers",
+          "items": [
+            {
+              "id": "the-liturgical-forms-05-ordination-and-installation-of-office-bearers-01-form-for-the-ordination-and-installation-of-office-bearers",
+              "title": "Form for the Ordination and Installation of Office Bearers",
+              "path": "The Liturgical Forms/05 - Ordination and Installation of Office Bearers/01 - Form for the Ordination and Installation of Office Bearers.md",
+              "pdfPath": null,
+              "wordCount": 3489,
+              "footnoteCount": 65,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-05-ordination-and-installation-of-office-bearers-02-form-for-the-ordination-and-installation-of-ministers",
+              "title": "Form for the Ordination and Installation of Ministers",
+              "path": "The Liturgical Forms/05 - Ordination and Installation of Office Bearers/02 - Form for the Ordination and Installation of Ministers.md",
+              "pdfPath": null,
+              "wordCount": 3085,
+              "footnoteCount": 41,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-05-ordination-and-installation-of-office-bearers-03-form-for-the-ordination-and-installation-of-elders-and-deacons",
+              "title": "Form for the Ordination and Installation of Elders and Deacons",
+              "path": "The Liturgical Forms/05 - Ordination and Installation of Office Bearers/03 - Form for the Ordination and Installation of Elders and Deacons.md",
+              "pdfPath": null,
+              "wordCount": 2948,
+              "footnoteCount": 24,
+              "headings": []
+            }
+          ]
+        },
+        {
+          "id": "liturgical-forms-marriage",
+          "title": "Marriage",
+          "items": [
+            {
+              "id": "the-liturgical-forms-06-marriage-01-marriage-banns",
+              "title": "Marriage Banns",
+              "path": "The Liturgical Forms/06 - Marriage/01 - Marriage Banns.md",
+              "pdfPath": null,
+              "wordCount": 60,
+              "footnoteCount": 0,
+              "headings": []
+            },
+            {
+              "id": "the-liturgical-forms-06-marriage-02-form-for-the-solemnisation-of-marriage",
+              "title": "Form for the Solemnisation of Marriage",
+              "path": "The Liturgical Forms/06 - Marriage/02 - Form for the Solemnisation of Marriage.md",
+              "pdfPath": null,
+              "wordCount": 2364,
+              "footnoteCount": 17,
+              "headings": []
+            }
+          ]
+        },
+        {
+          "id": "liturgical-forms-form-and-guidelines-for-funerals",
+          "title": "Form and Guidelines for Funerals",
+          "items": [
+            {
+              "id": "the-liturgical-forms-07-form-and-guidelines-for-funerals",
+              "title": "Form and Guidelines for Funerals",
+              "path": "The Liturgical Forms/07 - Form and Guidelines for Funerals.md",
+              "pdfPath": null,
+              "wordCount": 1715,
+              "footnoteCount": 28,
+              "headings": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other-resources",
+      "title": "Other Resources",
+      "groups": [
+        {
+          "id": "general-worship-resources",
+          "title": "General Worship Resources",
+          "items": [
+            {
+              "id": "other-resources-01-alternatives-and-options-in-the-use-of-the-liturgical-forms",
+              "title": "Alternatives and Options in the Use of the Liturgical Forms",
+              "path": "Other Resources/01 - Alternatives and Options in the Use of the Liturgical Forms.md",
+              "pdfPath": null,
+              "wordCount": 276,
+              "footnoteCount": 0,
+              "headings": []
+            },
+            {
+              "id": "other-resources-02-calls-to-worship",
+              "title": "Calls to Worship",
+              "path": "Other Resources/02 - Calls to Worship.md",
+              "pdfPath": null,
+              "wordCount": 2711,
+              "footnoteCount": 0,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "A. Advent",
+                  "slug": "a-advent"
+                },
+                {
+                  "level": 2,
+                  "text": "B. Christmas",
+                  "slug": "b-christmas"
+                },
+                {
+                  "level": 2,
+                  "text": "C. Passion",
+                  "slug": "c-passion"
+                },
+                {
+                  "level": 2,
+                  "text": "D. Easter",
+                  "slug": "d-easter"
+                },
+                {
+                  "level": 2,
+                  "text": "E. Ascension",
+                  "slug": "e-ascension"
+                },
+                {
+                  "level": 2,
+                  "text": "F. Pentecost",
+                  "slug": "f-pentecost"
+                },
+                {
+                  "level": 2,
+                  "text": "G. General",
+                  "slug": "g-general"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "other-resources-other-liturgical-readings",
+          "title": "Other Liturgical Readings",
+          "items": [
+            {
+              "id": "other-resources-03-other-liturgical-readings-01-greetings-and-benedictions",
+              "title": "Greetings and Benedictions",
+              "path": "Other Resources/03 - Other Liturgical Readings/01 - Greetings and Benedictions.md",
+              "pdfPath": null,
+              "wordCount": 407,
+              "footnoteCount": 0,
+              "headings": []
+            },
+            {
+              "id": "other-resources-03-other-liturgical-readings-02-readings-of-the-law",
+              "title": "Readings of the Law",
+              "path": "Other Resources/03 - Other Liturgical Readings/02 - Readings of the Law.md",
+              "pdfPath": null,
+              "wordCount": 4366,
+              "footnoteCount": 0,
+              "headings": []
+            },
+            {
+              "id": "other-resources-03-other-liturgical-readings-03-assurances-of-pardon",
+              "title": "Assurances of Pardon",
+              "path": "Other Resources/03 - Other Liturgical Readings/03 - Assurances of Pardon.md",
+              "pdfPath": null,
+              "wordCount": 2831,
+              "footnoteCount": 0,
+              "headings": [
+                {
+                  "level": 3,
+                  "text": "i. Advent",
+                  "slug": "i-advent"
+                },
+                {
+                  "level": 3,
+                  "text": "ii. Christmas",
+                  "slug": "ii-christmas"
+                },
+                {
+                  "level": 3,
+                  "text": "iii. Passion",
+                  "slug": "iii-passion"
+                },
+                {
+                  "level": 3,
+                  "text": "iv. Easter",
+                  "slug": "iv-easter"
+                },
+                {
+                  "level": 3,
+                  "text": "v. Ascension",
+                  "slug": "v-ascension"
+                },
+                {
+                  "level": 3,
+                  "text": "vi. Pentecost",
+                  "slug": "vi-pentecost"
+                },
+                {
+                  "level": 3,
+                  "text": "vii. General",
+                  "slug": "vii-general"
+                }
+              ]
+            },
+            {
+              "id": "other-resources-03-other-liturgical-readings-04-readings-at-the-offerings",
+              "title": "Readings at the Offerings",
+              "path": "Other Resources/03 - Other Liturgical Readings/04 - Readings at the Offerings.md",
+              "pdfPath": null,
+              "wordCount": 498,
+              "footnoteCount": 0,
+              "headings": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

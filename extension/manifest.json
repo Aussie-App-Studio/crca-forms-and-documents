@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "CRCA Forms & Documents",
+  "short_name": "CRCA Forms",
+  "version": "1.0.0",
+  "description": "Browse, search, read, copy, and print CRCA Liturgical Forms, Creeds, Confessions, and Worship Resources.",
+  "permissions": [
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://raw.githubusercontent.com/*",
+    "https://*.github.io/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "action": {
+    "default_popup": "app.html?mode=popup",
+    "default_title": "CRCA Forms & Documents",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "app.html?mode=sidepanel"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
