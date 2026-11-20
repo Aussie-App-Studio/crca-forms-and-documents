@@ -144,10 +144,11 @@ const BIBLE_BOOK_PATTERN = [
 ].join("|");
 
 const VERSE_LIST = "\\d+[a-z]?(?:\\s*[-–—]\\s*\\d+[a-z]?)?(?:\\s*,\\s*\\d+[a-z]?(?:\\s*[-–—]\\s*\\d+[a-z]?)?)*";
-const CITATION_NUMBERS = `\\d+(?::${VERSE_LIST}(?:\\s*[-–—]\\s*\\d+:${VERSE_LIST})?|\\s*[-–—]\\s*\\d+(?::${VERSE_LIST})?)`;
-const CITATION_CHAIN = `(?:\\s*;\\s*${CITATION_NUMBERS})*`;
+const CITATION_NUMBERS = `\\d+(?::${VERSE_LIST}(?:\\s*[-–—]\\s*\\d+:${VERSE_LIST})?|\\s*[-–—]\\s*\\d+(?::${VERSE_LIST})?)?`;
+const CHAIN_ITEM = `\\d+(?::${VERSE_LIST}(?:\\s*[-–—]\\s*\\d+:${VERSE_LIST})?|\\s*[-–—]\\s*\\d+(?::${VERSE_LIST})?(?![ \\t]+[A-Za-z])|(?![ \\t]+[A-Za-z]))`;
+const CITATION_CHAIN = `(?:\\s*;\\s*${CHAIN_ITEM})*`;
 const SCRIPTURE_RE = new RegExp(
-  `(?<![A-Za-z0-9])(${BIBLE_BOOK_PATTERN})\\s+(${CITATION_NUMBERS}${CITATION_CHAIN})`,
+  `(?<![A-Za-z0-9])(${BIBLE_BOOK_PATTERN})\\s+(${CITATION_NUMBERS}(?![ \\t]+(?:Cor|Chron|Thess|Tim|Pet|Sam|Kgs|Jn|John|Peter|Timothy|Corinthians|Thessalonians|Kings|Samuel|Chronicles)\\b)${CITATION_CHAIN})`,
   "g"
 );
 
@@ -176,7 +177,7 @@ export function linkifyScriptureHtml(html, bibleVersion = "NIV", { skipHeadings 
         // Guard bare single-word ambiguous names unless followed by chapter:verse, chapter range, or single-chapter book
         const hasColon = firstRef.includes(":");
         const isSingleChapter = SINGLE_CHAPTER_BOOKS.has(bookKey);
-        const isSafeChapterBook = /^(psalm|psalms|psa|ps|john|romans|rom|1 corinthians|2 corinthians|1 thessalonians|2 thessalonians|revelation|rev|acts|gen|exod|isa|matt|luke|heb|gen|deut|1 pet|2 pet|1 jn|2 jn|3 jn)/.test(bookKey);
+        const isSafeChapterBook = /^(psalm|psalms|psa|ps|genesis|gen|exodus|exod|deuteronomy|deut|isaiah|isa|jeremiah|jer|ezekiel|ezek|daniel|dan|matthew|matt|luke|john|acts|romans|rom|1 corinthians|1 cor|2 corinthians|2 cor|galatians|gal|ephesians|eph|philippians|phil|colossians|col|1 thessalonians|1 thess|2 thessalonians|2 thess|1 timothy|1 tim|2 timothy|2 tim|hebrews|heb|1 peter|1 pet|2 peter|2 pet|1 john|1 jn|revelation|rev)$/.test(bookKey);
         if (!hasColon && !isSingleChapter && !isSafeChapterBook && !/[-–—]/.test(firstRef)) {
           return fullMatch;
         }
@@ -227,6 +228,8 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
   const belgicDoc = findTitle("The Belgic Confession");
   const heidelbergDoc = findTitle("The Heidelberg Catechism");
   const canonsDoc = findTitle("The Canons of Dort");
+  const wcfDoc = findTitle("The Westminster Confession of Faith");
+  const coDoc = findTitle("CRCA Church Order (2022)");
   const apostlesDoc = findTitle("The Apostles' Creed");
   const niceneDoc = findTitle("The Nicene Creed");
   const athanasianDoc = findTitle("The Athanasian Creed");
@@ -250,6 +253,9 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
   addRule("Belgic Confession", belgicDoc);
   addRule("Heidelberg Catechism", heidelbergDoc);
   addRule("Canons of Dort", canonsDoc);
+  addRule("Westminster Confession of Faith", wcfDoc);
+  addRule("Westminster Confession", wcfDoc);
+  addRule("Church Order", coDoc);
   addRule("Apostles' Creed", apostlesDoc);
   addRule("Nicene Creed", niceneDoc);
   addRule("Athanasian Creed", athanasianDoc);
@@ -267,7 +273,7 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
     })
     .sort((a, b) => b.phrase.length - a.phrase.length);
 
-  // First handle "Article N of the Belgic Confession" before generic "Belgic Confession"
+  // First handle deep section references ("Article N of the Belgic Confession", "Church Order, Article N")
   let result = html;
   if (belgicDoc && belgicDoc.id !== currentDocId) {
     result = transformHtmlTextNodes(result, {
@@ -277,6 +283,17 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
           const heading = (belgicDoc.headings || []).find((h) => new RegExp(`^Article\\s+${num}\\b`, "i").test(h.text));
           const slugAttr = heading ? ` data-doc-slug="${escapeHtml(heading.slug)}"` : "";
           return `<button type="button" class="doc-xref-link" data-doc-id="${escapeHtml(belgicDoc.id)}"${slugAttr}>${match}</button>`;
+        }),
+    });
+  }
+  if (coDoc && coDoc.id !== currentDocId) {
+    result = transformHtmlTextNodes(result, {
+      skipTags: ["a", "button", "h1", "h2", "h3", "h4"],
+      transformText: (seg) =>
+        seg.replace(/\bChurch\s+Order,?\s+Art(?:icle)?\.?\s+(\d{1,3})\b/gi, (match, num) => {
+          const heading = (coDoc.headings || []).find((h) => new RegExp(`^Article\\s+${num}\\b`, "i").test(h.text));
+          const slugAttr = heading ? ` data-doc-slug="${escapeHtml(heading.slug)}"` : "";
+          return `<button type="button" class="doc-xref-link" data-doc-id="${escapeHtml(coDoc.id)}"${slugAttr}>${match}</button>`;
         }),
     });
   }
@@ -324,6 +341,8 @@ export function parseSearchShortcut(query, allDocs) {
   const hc = allDocs.find((d) => d.id.endsWith("the-heidelberg-catechism"));
   const bc = allDocs.find((d) => d.id.endsWith("the-belgic-confession"));
   const cd = allDocs.find((d) => d.id.endsWith("the-canons-of-dort"));
+  const wcf = allDocs.find((d) => d.id.endsWith("the-westminster-confession-of-faith"));
+  const co = allDocs.find((d) => d.id.includes("crca-church-order"));
   const results = [];
 
   // 1. Heidelberg Catechism Lord's Day (LD 1, hc ld 21, lord's day 52)
@@ -439,6 +458,38 @@ export function parseSearchShortcut(query, allDocs) {
     }
   }
 
+  // 5b. Westminster Confession Chapter (WCF 1, Westminster 14)
+  const wcfMatch = /^(?:wcf|westminster(?:\s+confession)?)\s*(?:ch(?:apter)?\.?\s*)?(\d{1,2})$/i.exec(q);
+  if (wcfMatch && wcf) {
+    const n = Number(wcfMatch[1]);
+    if (n >= 1 && n <= 33) {
+      const h = (wcf.headings || []).find((hd) => new RegExp(`^Chapter\\s+${n}\\b`, "i").test(hd.text));
+      if (h) {
+        results.push(makeQuickResult(wcf, {
+          score: 520,
+          headingSlug: h.slug,
+          headingText: h.text,
+          snippetHtml: `Jump to <strong>${escapeHtml(h.text)}</strong>`,
+        }));
+      }
+    }
+  }
+
+  // 5c. CRCA Church Order Article (CO 71, Church Order Art 5)
+  const coMatch = /^(?:co|church\s*order)\s*(?:art(?:icle)?\.?\s*)?(\d{1,3})$/i.exec(q);
+  if (coMatch && co) {
+    const n = Number(coMatch[1]);
+    const h = (co.headings || []).find((hd) => new RegExp(`^Article\\s+${n}\\b`, "i").test(hd.text));
+    if (h) {
+      results.push(makeQuickResult(co, {
+        score: 520,
+        headingSlug: h.slug,
+        headingText: h.text,
+        snippetHtml: `Jump to <strong>${escapeHtml(h.text)}</strong>`,
+      }));
+    }
+  }
+
   // 6. Generic "Art 14" / "Article 36"
   const artMatch = /^art(?:icle)?\.?\s*(\d{1,2})$/i.exec(q);
   if (artMatch && results.length === 0) {
@@ -466,6 +517,17 @@ export function parseSearchShortcut(query, allDocs) {
             snippetHtml: `Jump to <strong>${escapeHtml(currentMain)} &rsaquo; ${escapeHtml(hd.text)}</strong>`,
           }));
         }
+      }
+    }
+    if (co) {
+      const h = (co.headings || []).find((hd) => new RegExp(`^Article\\s+${n}\\b`, "i").test(hd.text));
+      if (h) {
+        results.push(makeQuickResult(co, {
+          score: 440,
+          headingSlug: h.slug,
+          headingText: h.text,
+          snippetHtml: `Jump to <strong>${escapeHtml(h.text)}</strong>`,
+        }));
       }
     }
   }

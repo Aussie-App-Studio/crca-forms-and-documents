@@ -59,7 +59,7 @@ NUMBERED_READING_RE = re.compile(
 )
 
 BAPTISM_CUE_RE = re.compile(
-    r"^(?:Why do we baptise.+\?|(?:Question to Parents|Question to the congregation[^:]*|"
+    r"^(?:Why do we baptise.*\?|(?:Question to Parents|Question to the congregation[^:]*|"
     r"Baptism|Baptismal prayer|Address to Parents|Prayer of thanksgiving):)$",
     re.I,
 )

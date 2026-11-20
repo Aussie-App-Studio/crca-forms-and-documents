@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-20T15:02:19+00:00",
+  "generatedAt": "2026-11-20T15:03:30+00:00",
   "repoDefault": {
     "owner": "Aussie-App-Studio",
     "repo": "crca-forms-and-documents",
@@ -1182,6 +1182,11 @@
               "wordCount": 1290,
               "footnoteCount": 16,
               "headings": [
+                {
+                  "level": 2,
+                  "text": "Why do we baptise?",
+                  "slug": "why-do-we-baptise"
+                },
                 {
                   "level": 2,
                   "text": "Why do we baptise with water?",
