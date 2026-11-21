@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "CRCA Forms & Documents",
   "short_name": "CRCA Forms",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Browse, search, read, copy, and print CRCA Liturgical Forms, Creeds, Confessions, and Worship Resources.",
   "permissions": [
     "storage",

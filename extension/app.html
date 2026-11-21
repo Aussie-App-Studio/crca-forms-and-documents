@@ -27,13 +27,13 @@
           <button type="button" id="themeBtn" class="icon-btn" title="Toggle light/dark theme" aria-label="Toggle theme">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           </button>
-          <button type="button" id="sidePanelBtn" class="icon-btn mode-popup-only" title="Open in Side Panel" aria-label="Open in Side Panel">
+          <button type="button" id="sidePanelBtn" class="icon-btn mode-popup-only" title="Open in Side Panel (Alt+Shift+S)" aria-label="Open in Side Panel">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
           </button>
           <button type="button" id="openTabBtn" class="icon-btn mode-hide-tab" title="Open in full tab" aria-label="Open in full tab">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </button>
-          <button type="button" id="settingsBtn" class="icon-btn" title="Source &amp; cache settings" aria-label="Settings">
+          <button type="button" id="settingsBtn" class="icon-btn" title="Source, Bible &amp; offline settings" aria-label="Settings">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </button>
         </div>
@@ -41,7 +41,7 @@
 
       <div id="searchWrap" class="search-wrap">
         <svg class="search-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input id="searchInput" type="search" placeholder="Search forms, creeds, Lord's Days, Scripture... ( / )" autocomplete="off">
+        <input id="searchInput" type="search" placeholder="Search or jump (e.g. LD 1, Q 1, BC 14, CD 1:7, CO 71)... ( / )" autocomplete="off">
         <button type="button" id="clearSearchBtn" class="clear-search-btn hidden" aria-label="Clear search">&times;</button>
       </div>
     </header>
@@ -71,6 +71,10 @@
 
       <!-- Browse View -->
       <section id="browseView" class="browse-view hidden">
+        <div id="offlineBanner" class="offline-banner hidden">
+          <span id="offlineBannerText" class="offline-banner-text"></span>
+          <button type="button" id="offlineBannerBtn" class="btn btn-secondary btn-sm">Download All Offline</button>
+        </div>
         <div id="categoryTabs" class="category-tabs" role="tablist"></div>
         <div id="recentSection" class="recent-section hidden"></div>
         <div id="catalogList" class="catalog-list"></div>
@@ -84,50 +88,96 @@
 
       <!-- Reader View -->
       <section id="readerView" class="reader-view hidden">
-        <div class="reader-toolbar no-print">
-          <div class="toolbar-left">
-            <button type="button" id="backBtn" class="btn btn-ghost btn-sm" title="Back to library (Esc)">
-              &larr; Back
-            </button>
-            <select id="tocSelect" class="toc-select hidden" aria-label="Jump to section"></select>
-          </div>
-
-          <div class="toolbar-right">
-            <button type="button" id="toggleFootnotesBtn" class="btn btn-ghost btn-sm" title="Toggle Scripture footnotes">
-              Footnotes
-            </button>
-
-            <div class="copy-dropdown">
-              <button type="button" id="copyMenuBtn" class="btn btn-secondary btn-sm">
-                Copy &#9662;
+        <div class="reader-sticky-bar no-print">
+          <div class="reader-toolbar">
+            <div class="toolbar-left">
+              <button type="button" id="backBtn" class="btn btn-ghost btn-sm" title="Back to library (Esc)">
+                &larr; Back
               </button>
-              <div id="copyMenu" class="dropdown-menu hidden">
-                <button type="button" class="dropdown-item" data-copy-mode="clean">Copy Clean Text (no footnotes)</button>
-                <button type="button" class="dropdown-item" data-copy-mode="footnotes">Copy with Footnotes</button>
-                <button type="button" class="dropdown-item" data-copy-mode="markdown">Copy Raw Markdown</button>
+              <select id="tocSelect" class="toc-select hidden" aria-label="Jump to section"></select>
+            </div>
+
+            <div class="toolbar-right">
+              <button type="button" id="findBtn" class="icon-btn" title="Find in document (Ctrl+F)" aria-label="Find in document">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </button>
+
+              <button type="button" id="toggleFootnotesBtn" class="btn btn-ghost btn-sm" title="Toggle Scripture footnotes">
+                Footnotes
+              </button>
+
+              <div class="copy-dropdown">
+                <button type="button" id="copyMenuBtn" class="btn btn-secondary btn-sm">
+                  Copy &#9662;
+                </button>
+                <div id="copyMenu" class="dropdown-menu hidden">
+                  <button type="button" class="dropdown-item" data-copy-mode="clean">Copy Clean Text (Rich + Plain)</button>
+                  <button type="button" class="dropdown-item" data-copy-mode="footnotes">Copy with Footnotes (Rich + Plain)</button>
+                  <button type="button" class="dropdown-item" data-copy-mode="slides">Copy for Slides (ProPresenter / PPT)</button>
+                  <button type="button" class="dropdown-item" data-copy-mode="word">Export for Word / Bulletin (.doc)</button>
+                  <button type="button" class="dropdown-item" data-copy-mode="markdown">Copy Raw Markdown</button>
+                </div>
+              </div>
+
+              <button type="button" id="printBtn" class="btn btn-secondary btn-sm" title="Print or Save as PDF">
+                PDF / Print
+              </button>
+
+              <a id="officialPdfLink" class="btn btn-ghost btn-sm hidden" target="_blank" rel="noopener" title="Open original CRCA PDF">
+                Official PDF
+              </a>
+
+              <button type="button" id="compareBtn" class="icon-btn" title="Side-by-side compare" aria-label="Side-by-side compare">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+              </button>
+
+              <button type="button" id="pulpitBtn" class="icon-btn" title="Pulpit / Distraction-free reading mode" aria-label="Pulpit mode">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </button>
+
+              <button type="button" id="bookmarkDocBtn" class="icon-btn" title="Bookmark document" aria-label="Toggle bookmark">
+                <span id="bookmarkStar">&#9734;</span>
+              </button>
+
+              <div class="font-controls">
+                <button type="button" id="fontDecBtn" class="icon-btn" title="Decrease font size" aria-label="Decrease font size">A-</button>
+                <button type="button" id="fontIncBtn" class="icon-btn" title="Increase font size" aria-label="Increase font size">A+</button>
               </div>
             </div>
+          </div>
 
-            <button type="button" id="printBtn" class="btn btn-secondary btn-sm" title="Print or Save as PDF">
-              PDF / Print
-            </button>
-
-            <a id="officialPdfLink" class="btn btn-ghost btn-sm hidden" target="_blank" rel="noopener" title="Open original CRCA PDF">
-              Official PDF
-            </a>
-
-            <button type="button" id="bookmarkDocBtn" class="icon-btn" title="Bookmark document" aria-label="Toggle bookmark">
-              <span id="bookmarkStar">&#9734;</span>
-            </button>
-
-            <div class="font-controls">
-              <button type="button" id="fontDecBtn" class="icon-btn" title="Decrease font size" aria-label="Decrease font size">A-</button>
-              <button type="button" id="fontIncBtn" class="icon-btn" title="Increase font size" aria-label="Increase font size">A+</button>
-            </div>
+          <!-- In-Document Find Bar -->
+          <div id="findBar" class="find-bar hidden">
+            <input id="findInput" type="search" class="find-input" placeholder="Find in this document..." autocomplete="off">
+            <span id="findCount" class="find-count"></span>
+            <button type="button" id="findPrevBtn" class="icon-btn" title="Previous match (Shift+Enter)" aria-label="Previous match">&uarr;</button>
+            <button type="button" id="findNextBtn" class="icon-btn" title="Next match (Enter)" aria-label="Next match">&darr;</button>
+            <button type="button" id="findCloseBtn" class="icon-btn" title="Close find (Esc)" aria-label="Close find">&times;</button>
           </div>
         </div>
 
         <div id="readerMetaBar" class="reader-meta-bar no-print"></div>
+        <div id="docHarmonyBar" class="doc-harmony-bar hidden no-print"></div>
+
+        <!-- Service Prep / Form Personalization Bar -->
+        <div id="servicePrepBar" class="service-prep-bar hidden no-print">
+          <div class="prep-header">
+            <div class="prep-header-left">
+              <span class="prep-title">Service Prep</span>
+              <span id="prepStatusBadge" class="badge"></span>
+            </div>
+            <div class="prep-header-actions">
+              <button type="button" id="prepResetBtn" class="btn btn-ghost btn-sm hidden">Reset</button>
+              <button type="button" id="prepToggleBtn" class="btn btn-secondary btn-sm">Customize</button>
+            </div>
+          </div>
+          <div id="prepBody" class="prep-body hidden">
+            <div id="prepFieldsGrid" class="prep-fields-grid"></div>
+            <div id="prepChoiceHint" class="prep-choice-hint hidden">
+              Tip: Click <strong>Use this option</strong> on any <code>EITHER / OR</code> table below to choose one option for reading, copying, and printing.
+            </div>
+          </div>
+        </div>
 
         <div class="print-controls-bar print-mode-only no-print">
           <button type="button" id="triggerPrintNowBtn" class="btn btn-primary btn-sm">Print / Save as PDF</button>
@@ -143,10 +193,47 @@
               <h2>Footnotes &amp; Scripture References</h2>
               <ol id="footnotesList" class="footnotes-list"></ol>
             </section>
+            <nav id="readerFooterNav" class="reader-footer-nav hidden no-print" aria-label="Document navigation">
+              <button type="button" id="prevDocBtn" class="btn btn-secondary btn-sm footer-nav-btn"></button>
+              <button type="button" id="nextDocBtn" class="btn btn-secondary btn-sm footer-nav-btn"></button>
+            </nav>
           </div>
+          <aside id="comparePane" class="compare-pane hidden no-print" aria-label="Side-by-side comparison">
+            <div class="compare-header">
+              <select id="compareDocSelect" class="compare-select" aria-label="Compare document"></select>
+              <select id="compareTocSelect" class="compare-toc-select hidden" aria-label="Jump to section in compared document"></select>
+              <div class="compare-header-actions">
+                <button type="button" id="compareSwapBtn" class="icon-btn" title="Swap primary and compared documents" aria-label="Swap documents">&#8644;</button>
+                <button type="button" id="compareCloseBtn" class="icon-btn" title="Close comparison" aria-label="Close comparison">&times;</button>
+              </div>
+            </div>
+            <div class="compare-scroll">
+              <div id="compareLoading" class="loading-box hidden">Loading document...</div>
+              <article id="compareArticle" class="reader-article"></article>
+              <section id="compareFootnotesSection" class="footnotes-section hidden">
+                <h2>Footnotes &amp; Scripture References</h2>
+                <ol id="compareFootnotesList" class="footnotes-list"></ol>
+              </section>
+            </div>
+          </aside>
         </div>
       </section>
     </main>
+
+    <!-- Pulpit Mode Floating Bar -->
+    <div id="pulpitBar" class="pulpit-bar hidden no-print" role="toolbar" aria-label="Pulpit mode controls">
+      <button type="button" id="pulpitExitBtn" class="btn btn-secondary btn-sm">Exit Pulpit</button>
+      <div class="pulpit-nav-group">
+        <button type="button" id="pulpitPrevSecBtn" class="btn btn-ghost btn-sm" title="Previous section ([)">&larr; Prev</button>
+        <span id="pulpitSecLabel" class="pulpit-sec-label"></span>
+        <button type="button" id="pulpitNextSecBtn" class="btn btn-ghost btn-sm" title="Next section (])">Next &rarr;</button>
+      </div>
+      <div class="pulpit-font-group">
+        <button type="button" id="pulpitFontDecBtn" class="icon-btn" title="Decrease font">A-</button>
+        <button type="button" id="pulpitFontIncBtn" class="icon-btn" title="Increase font">A+</button>
+        <button type="button" id="pulpitThemeBtn" class="icon-btn" title="Toggle light/dark theme">&#9788;</button>
+      </div>
+    </div>
 
     <!-- Footnote Popover -->
     <div id="fnPopover" class="fn-popover hidden no-print" role="dialog" aria-label="Footnote reference">
@@ -164,7 +251,7 @@
     <div id="settingsModal" class="modal-backdrop hidden no-print" role="dialog" aria-modal="true" aria-labelledby="settingsHeading">
       <div class="modal-card">
         <div class="modal-header">
-          <h2 id="settingsHeading">Source &amp; Cache Settings</h2>
+          <h2 id="settingsHeading">Source, Bible &amp; Cache Settings</h2>
           <button type="button" id="closeSettingsBtn" class="icon-btn" aria-label="Close settings">&times;</button>
         </div>
 
@@ -208,9 +295,17 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <label for="bibleVersionSelect" class="form-label">Bible Translation (for Scripture links)</label>
+            <select id="bibleVersionSelect" class="form-input"></select>
+          </div>
+
           <div class="cache-box">
             <div id="cacheStats" class="cache-stats">Cached documents: 0</div>
-            <button type="button" id="clearCacheBtn" class="btn btn-secondary btn-sm">Clear Offline Cache</button>
+            <div class="cache-actions">
+              <button type="button" id="cacheAllBtn" class="btn btn-primary btn-sm">Download All Offline</button>
+              <button type="button" id="clearCacheBtn" class="btn btn-secondary btn-sm">Clear Cache</button>
+            </div>
           </div>
         </div>
 

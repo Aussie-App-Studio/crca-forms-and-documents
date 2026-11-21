@@ -49,9 +49,59 @@
   }
 
   .reader-article blockquote,
-  .reader-article tr {
+  .reader-article tr,
+  .qa-block,
+  .wcf-section-block {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  /* Print personalized blanks & links cleanly */
+  .form-filled {
+    border-bottom: none !important;
+    padding: 0 !important;
+  }
+
+  .form-blank {
+    background: none !important;
+    color: #111111 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    border-bottom: 1pt solid #666666 !important;
+    border-radius: 0 !important;
+    padding: 0 6pt !important;
+  }
+
+  .scripture-link,
+  .doc-xref-link,
+  .co-art-ref {
+    color: #111111 !important;
+    text-decoration: none !important;
+    border: none !important;
+    background: transparent !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Omit unselected EITHER/OR column and simplify selected column to clean prose */
+  .choice-table[data-chosen-col] .choice-unselected {
+    display: none !important;
+  }
+
+  .choice-table[data-chosen-col][data-pure-kicker="1"] thead {
+    display: none !important;
+  }
+
+  .choice-table[data-chosen-col] th.choice-selected,
+  .choice-table[data-chosen-col] td.choice-selected {
+    width: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 0 8pt 0 !important;
   }
 
   .fn-ref {

@@ -201,6 +201,84 @@ function isQaQuestionStart(trimmedLine) {
   return /^\*\*Q\.\s*\d+\.\s*/.test(trimmedLine);
 }
 
+const NOT_ADOPTED_STATUS_RE = /^(?:The following (?:motion|motions|recommendation|recommendations)\b|As a result, the following|Synod (?:[“"']laid on the table[”"']|rejected|decided (?:not )?to take (?:no|any) action|decided the following recommendations were no longer required))/i;
+
+function isNotAdoptedBlockquote(quoteLines) {
+  const plain = quoteLines.join(" ").replace(/\*\*/g, "").replace(/\*/g, "").trim();
+  return NOT_ADOPTED_STATUS_RE.test(plain);
+}
+
+function renderBlockquoteHtml(quoteLines, renderInlineFn, attrs = "") {
+  const qParas = [];
+  let cur = [];
+  for (const ql of quoteLines) {
+    if (!ql.trim()) {
+      if (cur.length) {
+        qParas.push(`<p>${renderInlineFn(cur.join(" "))}</p>`);
+        cur = [];
+      }
+    } else {
+      cur.push(ql.trim());
+    }
+  }
+  if (cur.length) qParas.push(`<p>${renderInlineFn(cur.join(" "))}</p>`);
+  return `<blockquote${attrs}>${qParas.join("")}</blockquote>`;
+}
+
+function parseListLine(line) {
+  const indentMatch = /^([ \t]*)/.exec(line);
+  const indent = indentMatch ? indentMatch[1].replace(/\t/g, "  ").length : 0;
+  const trimmed = line.slice(indentMatch ? indentMatch[0].length : 0);
+  const olMatch = /^(\d+)\.\s+(.*)$/.exec(trimmed);
+  if (olMatch) {
+    return { type: "ol", indent, startNum: Number(olMatch[1]), text: olMatch[2], rawMarker: `${olMatch[1]}. ` };
+  }
+  const ulMatch = /^(?:[-*–—])\s+(.*)$/.exec(trimmed);
+  if (ulMatch) {
+    return { type: "ul", indent, startNum: 1, text: ulMatch[1], rawMarker: "- " };
+  }
+  return null;
+}
+
+function parseListBlock(lines, startIdx, renderInlineFn, shouldStopAt = null) {
+  const first = parseListLine(lines[startIdx]);
+  if (!first) return { html: "", nextIdx: startIdx };
+
+  const baseIndent = first.indent;
+  const listType = first.type;
+  const startNum = first.startNum;
+  const items = [];
+  let idx = startIdx;
+
+  while (idx < lines.length) {
+    if (shouldStopAt && shouldStopAt(idx)) break;
+    const item = parseListLine(lines[idx]);
+    if (!item || item.indent < baseIndent || (item.indent === baseIndent && item.type !== listType)) {
+      break;
+    }
+
+    let itemHtml = renderInlineFn(item.text);
+    idx += 1;
+
+    while (idx < lines.length && !(shouldStopAt && shouldStopAt(idx))) {
+      const next = parseListLine(lines[idx]);
+      if (next && next.indent > baseIndent) {
+        const nested = parseListBlock(lines, idx, renderInlineFn, shouldStopAt);
+        itemHtml += nested.html;
+        idx = nested.nextIdx;
+      } else {
+        break;
+      }
+    }
+
+    items.push(`<li>${itemHtml}</li>`);
+  }
+
+  const startAttr = listType === "ol" && startNum !== 1 ? ` start="${startNum}"` : "";
+  const tag = listType === "ol" ? "ol" : "ul";
+  return { html: `<${tag}${startAttr}>${items.join("")}</${tag}>`, nextIdx: idx };
+}
+
 function buildSectionActionsHtml(slug, title) {
   return `<span class="section-actions no-print"><button type="button" class="mini-copy-btn" data-copy-section="${escapeHtml(slug)}" data-copy-format="clean" title="Copy ${escapeHtml(title)}">Copy</button><button type="button" class="mini-copy-btn" data-copy-section="${escapeHtml(slug)}" data-copy-format="slides" title="Copy ${escapeHtml(title)} for slides">Slides</button></span>`;
 }
@@ -211,6 +289,7 @@ export function parseMarkdown(mdText, options = {}) {
     tableChoices = null,
     isLiturgicalForm = false,
     isReadingsDoc = false,
+    isWestminster = false,
   } = options;
 
   const { bodyText, defs } = extractFootnotes(mdText || "");
@@ -271,6 +350,7 @@ export function parseMarkdown(mdText, options = {}) {
   const seenSlugs = new Map();
   let docTitle = "";
   let choiceTableIdx = 0;
+  let currentWcfChapter = null;
 
   function allocateSlug(rawText) {
     const base = slugify(rawText);
@@ -340,6 +420,7 @@ export function parseMarkdown(mdText, options = {}) {
       const level = hMatch[1].length;
       let rawHeading = hMatch[2].trim();
       if (level === 1) {
+        currentWcfChapter = null;
         while (i + 1 < lines.length && lines[i + 1].trim() && !isBlockStarter(lines[i + 1])) {
           i += 1;
           rawHeading += " " + lines[i].trim();
@@ -349,6 +430,10 @@ export function parseMarkdown(mdText, options = {}) {
         }
         htmlParts.push(`<h1>${renderInline(rawHeading)}</h1>`);
       } else {
+        if (isWestminster && level === 2) {
+          const chM = /^Chapter\s+(\d+)\b/i.exec(rawHeading);
+          currentWcfChapter = chM ? Number(chM[1]) : null;
+        }
         const slug = allocateSlug(rawHeading);
         const displayText = cleanHeadingDisplay(rawHeading);
         if (level <= 3) {
@@ -458,23 +543,10 @@ export function parseMarkdown(mdText, options = {}) {
             i += 1;
           }
           qaParts.push(`<blockquote><p>${renderInline(quoteLines.filter(Boolean).join(" "))}</p></blockquote>`);
-        } else if (/^\d+\.\s+/.test(nt)) {
-          const firstM = /^(\d+)\.\s+/.exec(nt);
-          const startNum = Number(firstM[1]);
-          const items = [];
-          while (i < lines.length && /^\d+\.\s+/.test(lines[i].trim())) {
-            items.push(`<li>${renderInline(lines[i].trim().replace(/^\d+\.\s+/, ""))}</li>`);
-            i += 1;
-          }
-          const startAttr = startNum !== 1 ? ` start="${startNum}"` : "";
-          qaParts.push(`<ol${startAttr}>${items.join("")}</ol>`);
-        } else if (/^(?:[-*–—])\s+/.test(nt)) {
-          const items = [];
-          while (i < lines.length && /^(?:[-*–—])\s+/.test(lines[i].trim())) {
-            items.push(`<li>${renderInline(lines[i].trim().replace(/^(?:[-*–—])\s+/, ""))}</li>`);
-            i += 1;
-          }
-          qaParts.push(`<ul>${items.join("")}</ul>`);
+        } else if (parseListLine(lines[i])) {
+          const listBlock = parseListBlock(lines, i, renderInline, checkImplicitAt);
+          qaParts.push(listBlock.html);
+          i = listBlock.nextIdx;
         } else if (!nt.startsWith("|")) {
           const ansPara = parseParagraphAt(i);
           i = ansPara.nextIdx;
@@ -488,6 +560,19 @@ export function parseMarkdown(mdText, options = {}) {
       continue;
     }
 
+    // Westminster Confession numbered section block (**1.**, **2.**, ...)
+    const wcfSecMatch = isWestminster && currentWcfChapter ? /^\*\*(\d+)\.\*\*\s+/.exec(trimmed) : null;
+    if (wcfSecMatch) {
+      const secNum = wcfSecMatch[1];
+      const secPara = parseParagraphAt(i);
+      i = secPara.nextIdx;
+      const wcfId = `${currentWcfChapter}-${secNum}`;
+      const wcfActions = `<span class="qa-actions no-print"><button type="button" class="mini-copy-btn" data-copy-wcf="${wcfId}" data-copy-format="clean" title="Copy WCF ${currentWcfChapter}:${secNum}">Copy</button><button type="button" class="mini-copy-btn" data-copy-wcf="${wcfId}" data-copy-format="slides" title="Copy WCF ${currentWcfChapter}:${secNum} for slides">Slides</button></span>`;
+      const innerHtml = secPara.html.replace(/<\/p>$/, `${wcfActions}</p>`);
+      htmlParts.push(`<div class="wcf-section-block" id="wcf-${wcfId}" data-wcf-ch="${currentWcfChapter}" data-wcf-sec="${secNum}">${innerHtml}</div>`);
+      continue;
+    }
+
     // Blockquote
     if (/^>\s?/.test(trimmed)) {
       const quoteLines = [];
@@ -495,47 +580,16 @@ export function parseMarkdown(mdText, options = {}) {
         quoteLines.push(lines[i].trim().replace(/^>\s?/, ""));
         i += 1;
       }
-      const qParas = [];
-      let cur = [];
-      for (const ql of quoteLines) {
-        if (!ql.trim()) {
-          if (cur.length) {
-            qParas.push(`<p>${renderInline(cur.join(" "))}</p>`);
-            cur = [];
-          }
-        } else {
-          cur.push(ql.trim());
-        }
-      }
-      if (cur.length) qParas.push(`<p>${renderInline(cur.join(" "))}</p>`);
-      htmlParts.push(`<blockquote>${qParas.join("")}</blockquote>`);
+      const attrs = isNotAdoptedBlockquote(quoteLines) ? ' class="status-not-adopted"' : "";
+      htmlParts.push(renderBlockquoteHtml(quoteLines, renderInline, attrs));
       continue;
     }
 
-    // Ordered list
-    if (/^\d+\.\s+/.test(trimmed)) {
-      const firstM = /^(\d+)\.\s+/.exec(trimmed);
-      const startNum = Number(firstM[1]);
-      const items = [];
-      while (i < lines.length && /^\d+\.\s+/.test(lines[i].trim())) {
-        const itemText = lines[i].trim().replace(/^\d+\.\s+/, "");
-        items.push(`<li>${renderInline(itemText)}</li>`);
-        i += 1;
-      }
-      const startAttr = startNum !== 1 ? ` start="${startNum}"` : "";
-      htmlParts.push(`<ol${startAttr}>${items.join("")}</ol>`);
-      continue;
-    }
-
-    // Unordered list (- , * , or en-dash – )
-    if (/^(?:[-*–—])\s+/.test(trimmed)) {
-      const items = [];
-      while (i < lines.length && /^(?:[-*–—])\s+/.test(lines[i].trim())) {
-        const itemText = lines[i].trim().replace(/^(?:[-*–—])\s+/, "");
-        items.push(`<li>${renderInline(itemText)}</li>`);
-        i += 1;
-      }
-      htmlParts.push(`<ul>${items.join("")}</ul>`);
+    // Ordered & Unordered lists (with nested sub-lists)
+    if (parseListLine(line)) {
+      const listBlock = parseListBlock(lines, i, renderInline, checkImplicitAt);
+      htmlParts.push(listBlock.html);
+      i = listBlock.nextIdx;
       continue;
     }
 
@@ -680,21 +734,11 @@ export function getCleanText(mdText, { includeFootnotes = false, tableChoices = 
       continue;
     }
 
-    if (/^\d+\.\s+/.test(trimmed)) {
+    if (parseListLine(lines[i])) {
       const items = [];
-      while (i < lines.length && /^\d+\.\s+/.test(lines[i].trim())) {
-        items.push(cleanInline(lines[i].trim()));
-        i += 1;
-      }
-      out.push(items.join("\n"));
-      continue;
-    }
-
-    if (/^(?:[-*–—])\s+/.test(trimmed)) {
-      const items = [];
-      while (i < lines.length && /^(?:[-*–—])\s+/.test(lines[i].trim())) {
-        const item = lines[i].trim().replace(/^(?:[-*–—])\s+/, "- ");
-        items.push(cleanInline(item));
+      let li;
+      while (i < lines.length && (li = parseListLine(lines[i]))) {
+        items.push(" ".repeat(li.indent) + li.rawMarker + cleanInline(li.text));
         i += 1;
       }
       out.push(items.join("\n"));
@@ -840,4 +884,216 @@ export function extractQaMarkdown(mdText, qaNum) {
 
   if (startIdx < 0) return "";
   return appendScopedFootnotes(lines.slice(startIdx, endIdx).join("\n"), defs);
+}
+
+export function extractWcfSectionMarkdown(mdText, chapterNum, sectionNum) {
+  const { bodyText, defs } = extractFootnotes(mdText || "");
+  const lines = bodyText.split("\n");
+  const chRe = new RegExp(`^##\\s+Chapter\\s+${Number(chapterNum)}\\b`, "i");
+  const secRe = new RegExp(`^\\*\\*${Number(sectionNum)}\\.\\*\\*\\s+`);
+
+  let inChapter = false;
+  let chapterHeadingLine = "";
+  let secLine = "";
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const trimmed = lines[i].trim();
+    if (!inChapter) {
+      if (chRe.test(trimmed)) {
+        inChapter = true;
+        chapterHeadingLine = trimmed;
+      }
+      continue;
+    }
+    if (/^##\s+/.test(trimmed)) break;
+    if (secRe.test(trimmed)) {
+      secLine = trimmed;
+      break;
+    }
+  }
+
+  if (!secLine) return "";
+  return appendScopedFootnotes(`${chapterHeadingLine}\n\n${secLine}`, defs);
+}
+
+/**
+ * Render pure semantic HTML (no UI chrome, buttons, or unselected EITHER/OR columns)
+ * suitable for dual-format clipboard copy (Word / Google Docs) and .doc export.
+ */
+export function getCleanHtml(
+  mdText,
+  {
+    includeFootnotes = false,
+    tableChoices = null,
+    tableIndexOffset = 0,
+    isLiturgicalForm = false,
+    isReadingsDoc = false,
+  } = {}
+) {
+  const { bodyText, defs } = extractFootnotes(mdText || "");
+  const lines = bodyText.split("\n");
+  const hasExplicitH2 = lines.some((l) => /^#{2,4}\s+/.test(l.trim()));
+  const refOrder = [];
+  const refBadgeMap = new Map();
+  let choiceTableIdx = 0;
+
+  function trackRef(id) {
+    if (!refBadgeMap.has(id)) {
+      const seq = refOrder.length + 1;
+      refBadgeMap.set(id, formatFootnoteDisplay(id, seq));
+      refOrder.push(id);
+    }
+    return refBadgeMap.get(id);
+  }
+
+  function renderCleanInline(raw) {
+    let safe = escapeWithSafeBr(raw);
+    const fnTokens = [];
+    safe = safe.replace(/\[\^([^\]]+)\]/g, (_, idRaw) => {
+      if (!includeFootnotes) return "";
+      const badge = trackRef(idRaw.trim());
+      const token = `\u0000CFN_${fnTokens.length}\u0000`;
+      fnTokens.push(`<sup>[${escapeHtml(badge)}]</sup>`);
+      return token;
+    });
+    safe = safe.replace(/\*\*([^*\n]+?)\*\*/g, "<strong>$1</strong>");
+    safe = safe.replace(/(^|[^*])\*([^*\n]+?)\*(?!\*)/g, "$1<em>$2</em>");
+    safe = safe.replace(/\u0000CFN_(\d+)\u0000/g, (_, idx) => fnTokens[Number(idx)]);
+    return safe;
+  }
+
+  const out = [];
+  let i = 0;
+  while (i < lines.length) {
+    const trimmed = lines[i].trim();
+    if (!trimmed) {
+      i += 1;
+      continue;
+    }
+    if (/^---+$/.test(trimmed)) {
+      out.push("<hr>");
+      i += 1;
+      continue;
+    }
+
+    const hMatch = /^(#{1,4})\s+(.+)$/.exec(trimmed);
+    if (hMatch) {
+      const level = hMatch[1].length;
+      let heading = hMatch[2].trim();
+      if (level === 1) {
+        while (i + 1 < lines.length && lines[i + 1].trim() && !isBlockStarter(lines[i + 1])) {
+          i += 1;
+          heading += " " + lines[i].trim();
+        }
+      }
+      out.push(`<h${level}>${renderCleanInline(heading)}</h${level}>`);
+      i += 1;
+      continue;
+    }
+
+    const nextBlank = i + 1 >= lines.length || lines[i + 1].trim() === "";
+    const imp = detectImplicitHeading(trimmed, {
+      hasExplicitH2,
+      isLiturgicalForm,
+      isReadingsDoc,
+      nextLineIsBlank: nextBlank,
+    });
+    if (imp) {
+      out.push(`<h${imp.htmlLevel}>${renderCleanInline(imp.rawText)}</h${imp.htmlLevel}>`);
+      i += 1;
+      continue;
+    }
+
+    if (trimmed.startsWith("|") && i + 1 < lines.length && isTableSeparator(lines[i + 1])) {
+      const rawHeaders = splitTableRow(trimmed);
+      const isChoice = isChoiceTableHeaders(rawHeaders);
+      i += 2;
+      const bodyRows = [];
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        bodyRows.push(splitTableRow(lines[i]));
+        i += 1;
+      }
+
+      if (isChoice) {
+        const globalIdx = tableIndexOffset + choiceTableIdx;
+        choiceTableIdx += 1;
+        const chosenCol =
+          tableChoices && (tableChoices[globalIdx] === 0 || tableChoices[globalIdx] === 1)
+            ? Number(tableChoices[globalIdx])
+            : null;
+        if (chosenCol !== null) {
+          const strippedHdr = rawHeaders[chosenCol].replace(/^(?:EITHER|OR)\s*:?\s*/i, "").trim();
+          if (strippedHdr) out.push(`<p><strong>${renderCleanInline(strippedHdr)}</strong></p>`);
+          for (const r of bodyRows) {
+            const cell = (r[chosenCol] ?? "").trim();
+            if (cell) out.push(`<p>${renderCleanInline(cell)}</p>`);
+          }
+          continue;
+        }
+      }
+
+      const ths = rawHeaders.map((c) => `<th>${renderCleanInline(c)}</th>`).join("");
+      const trs = bodyRows
+        .map((row) => `<tr>${rawHeaders.map((_, idx) => `<td>${renderCleanInline(row[idx] ?? "")}</td>`).join("")}</tr>`)
+        .join("");
+      out.push(`<table><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table>`);
+      continue;
+    }
+
+    if (/^>\s?/.test(trimmed)) {
+      const quoteLines = [];
+      while (i < lines.length && /^>\s?/.test(lines[i].trim())) {
+        quoteLines.push(lines[i].trim().replace(/^>\s?/, ""));
+        i += 1;
+      }
+      const attrs = isNotAdoptedBlockquote(quoteLines)
+        ? ' style="border-left: 3px solid #B42318; background: #FEF3F2; color: #B42318; padding: 6px 10px;"'
+        : "";
+      out.push(renderBlockquoteHtml(quoteLines, renderCleanInline, attrs));
+      continue;
+    }
+
+    if (parseListLine(lines[i])) {
+      const listBlock = parseListBlock(lines, i, renderCleanInline, (idx) => {
+        const t = lines[idx]?.trim() || "";
+        const nb = idx + 1 >= lines.length || lines[idx + 1].trim() === "";
+        return detectImplicitHeading(t, { hasExplicitH2, isLiturgicalForm, isReadingsDoc, nextLineIsBlank: nb });
+      });
+      out.push(listBlock.html);
+      i = listBlock.nextIdx;
+      continue;
+    }
+
+    const pLines = [];
+    while (i < lines.length && lines[i].trim() && !isBlockStarter(lines[i])) {
+      if (pLines.length > 0) {
+        const nb = i + 1 >= lines.length || lines[i + 1].trim() === "";
+        if (detectImplicitHeading(lines[i].trim(), { hasExplicitH2, isLiturgicalForm, isReadingsDoc, nextLineIsBlank: nb })) {
+          break;
+        }
+      }
+      pLines.push(lines[i]);
+      i += 1;
+    }
+    let paraHtml = "";
+    for (let k = 0; k < pLines.length; k += 1) {
+      const rendered = renderCleanInline(pLines[k].trim());
+      if (k === 0) paraHtml = rendered;
+      else if (/ {2,}$/.test(pLines[k - 1])) paraHtml += `<br>${rendered}`;
+      else paraHtml += ` ${rendered}`;
+    }
+    out.push(`<p>${paraHtml}</p>`);
+  }
+
+  if (includeFootnotes && defs.size > 0) {
+    for (const id of defs.keys()) trackRef(id);
+    const fnItems = refOrder
+      .filter((id) => defs.has(id))
+      .map((id) => `<li><strong>[${escapeHtml(formatFootnoteListLabel(id, refBadgeMap.get(id)))}]</strong> ${escapeHtml(defs.get(id))}</li>`);
+    if (fnItems.length > 0) {
+      out.push(`<hr><h3>Footnotes &amp; Scripture References</h3><ol>${fnItems.join("")}</ol>`);
+    }
+  }
+
+  return `<div style="font-family: Georgia, Cambria, 'Times New Roman', serif; font-size: 11.5pt; line-height: 1.55; color: #111111;">${out.join("\n")}</div>`;
 }

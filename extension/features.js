@@ -130,7 +130,7 @@ const BIBLE_BOOK_PATTERN = [
   "Peter", "Pet\\.?",
   "Chronicles",
   "Kings",
-  "Titus",
+  "Titus", "Tit\\.?",
   "Amos",
   "Joel",
   "Ruth",
@@ -230,12 +230,17 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
   const canonsDoc = findTitle("The Canons of Dort");
   const wcfDoc = findTitle("The Westminster Confession of Faith");
   const coDoc = findTitle("CRCA Church Order (2022)");
+  const finalExamDoc = findTitle("Rules for the Final Examination (2024)");
+  const acts2024Doc = findTitle("Acts of Synod (2024)");
   const apostlesDoc = findTitle("The Apostles' Creed");
   const niceneDoc = findTitle("The Nicene Creed");
   const athanasianDoc = findTitle("The Athanasian Creed");
   const ls1Doc = findTitle("Form for the Celebration of the Lord's Supper (I)");
   const ordMinDoc = findTitle("Form for the Ordination and Installation of Ministers");
   const ordEldDoc = findTitle("Form for the Ordination and Installation of Elders and Deacons");
+  const excommDoc = findTitle("Form for Excommunication");
+  const readmitDoc = findTitle("Form for the Re-Admission of Excommunicated Persons");
+  const marriageDoc = findTitle("Form for the Solemnisation of Marriage");
 
   const rules = [];
   const addRule = (phrase, doc, slug = null) => {
@@ -256,11 +261,19 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
   addRule("Westminster Confession of Faith", wcfDoc);
   addRule("Westminster Confession", wcfDoc);
   addRule("Church Order", coDoc);
+  addRule("Rules for the Final Examination", finalExamDoc);
+  addRule("Final Examination", finalExamDoc);
+  addRule("The Acts of Synod 2024", acts2024Doc);
+  addRule("Acts of Synod 2024", acts2024Doc);
   addRule("Apostles' Creed", apostlesDoc);
+  addRule("Apostles Creed", apostlesDoc);
   addRule("Nicene Creed", niceneDoc);
   addRule("Athanasian Creed", athanasianDoc);
   addRule("ordination / installation of ministers", ordMinDoc);
   addRule("ordination / installation of elders and deacons", ordEldDoc);
+  addRule("form for excommunication prescribed by synod", excommDoc);
+  addRule("form for re-admission prescribed by synod", readmitDoc);
+  addRule("form for the solemnisation of marriage prescribed by the synod", marriageDoc);
 
   // Deduplicate by pattern & sort longest first so more specific titles win
   const seen = new Set();
@@ -287,14 +300,17 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
     });
   }
   if (coDoc && coDoc.id !== currentDocId) {
+    const makeCoXref = (match, num) => {
+      const heading = (coDoc.headings || []).find((h) => new RegExp(`^Article\\s+${num}\\b`, "i").test(h.text));
+      const slugAttr = heading ? ` data-doc-slug="${escapeHtml(heading.slug)}"` : "";
+      return `<button type="button" class="doc-xref-link" data-doc-id="${escapeHtml(coDoc.id)}"${slugAttr}>${match}</button>`;
+    };
     result = transformHtmlTextNodes(result, {
       skipTags: ["a", "button", "h1", "h2", "h3", "h4"],
       transformText: (seg) =>
-        seg.replace(/\bChurch\s+Order,?\s+Art(?:icle)?\.?\s+(\d{1,3})\b/gi, (match, num) => {
-          const heading = (coDoc.headings || []).find((h) => new RegExp(`^Article\\s+${num}\\b`, "i").test(h.text));
-          const slugAttr = heading ? ` data-doc-slug="${escapeHtml(heading.slug)}"` : "";
-          return `<button type="button" class="doc-xref-link" data-doc-id="${escapeHtml(coDoc.id)}"${slugAttr}>${match}</button>`;
-        }),
+        seg
+          .replace(/\b(?:Church\s+Order|C\.O\.),?\s+Art(?:icle)?\.?\s+(\d{1,3})(?:\.?[a-z])?\b/gi, makeCoXref)
+          .replace(/\bArticle\s+(\d{1,3})\s+of\s+the\s+Church\s+Order\b/gi, makeCoXref),
     });
   }
 
@@ -316,6 +332,51 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
         return `<button type="button" class="doc-xref-link" data-doc-id="${escapeHtml(rule.docId)}"${slugAttr}>${match}</button>`;
       }),
   });
+}
+
+/**
+ * Linkify internal CRCA Church Order cross-references like "(See Art 51)",
+ * "(See Arts 23, 31)", "(See Arts 66.b, c)", and "Article 44.b".
+ */
+export function linkifyChurchOrderRefsHtml(html, coDoc) {
+  if (!coDoc || !Array.isArray(coDoc.headings)) return html;
+
+  const artSlugMap = new Map();
+  for (const h of coDoc.headings) {
+    const m = /^Article\s+(\d+)\b/i.exec(h.text);
+    if (m) artSlugMap.set(Number(m[1]), h.slug);
+  }
+  if (artSlugMap.size === 0) return html;
+
+  const makeCoButton = (displayText, artNum, subClause = "") => {
+    const slug = artSlugMap.get(Number(artNum));
+    if (!slug) return displayText;
+    const subAttr = subClause ? ` data-co-sub="${escapeHtml(subClause)}"` : "";
+    return `<button type="button" class="co-art-ref" data-co-art="${escapeHtml(artNum)}"${subAttr} data-co-slug="${escapeHtml(slug)}" title="Preview Church Order Article ${escapeHtml(artNum)}${subClause ? `.${escapeHtml(subClause)}` : ""}">${displayText}</button>`;
+  };
+
+  // First handle parenthetical "(See Art 51)" / "(See Arts 7, 8, 9, ...)" / "(See Arts 66.b, c)"
+  let result = transformHtmlTextNodes(html, {
+    skipTags: ["a", "button", "h1", "h2", "h3", "h4", "code", "pre"],
+    transformText: (seg) =>
+      seg.replace(/\(((?:See|Refer(?:\s+to)?)\s+Arts?\.?\s+)([0-9a-z.,\s]+)\)/gi, (full, prefix, listPart) => {
+        const linkedList = listPart.replace(/\b(\d{1,3})(?:\.([a-z]))?\b/g, (tok, nStr, sub) =>
+          makeCoButton(tok, nStr, sub || "")
+        );
+        return `(${prefix}${linkedList})`;
+      }),
+  });
+
+  // Then handle standalone prose "Article 44.b" / "Article 10.a"
+  result = transformHtmlTextNodes(result, {
+    skipTags: ["a", "button", "h1", "h2", "h3", "h4", "code", "pre"],
+    transformText: (seg) =>
+      seg.replace(/\bArticle\s+(\d{1,3})(?:\.([a-z]))?\b/g, (full, nStr, sub) =>
+        makeCoButton(full, nStr, sub || "")
+      ),
+  });
+
+  return result;
 }
 
 // ---------------------------------------------------------------------------
@@ -343,6 +404,7 @@ export function parseSearchShortcut(query, allDocs) {
   const cd = allDocs.find((d) => d.id.endsWith("the-canons-of-dort"));
   const wcf = allDocs.find((d) => d.id.endsWith("the-westminster-confession-of-faith"));
   const co = allDocs.find((d) => d.id.includes("crca-church-order"));
+  const acts2024 = allDocs.find((d) => d.id.includes("acts-of-synod-2024"));
   const results = [];
 
   // 1. Heidelberg Catechism Lord's Day (LD 1, hc ld 21, lord's day 52)
@@ -458,19 +520,28 @@ export function parseSearchShortcut(query, allDocs) {
     }
   }
 
-  // 5b. Westminster Confession Chapter (WCF 1, Westminster 14)
-  const wcfMatch = /^(?:wcf|westminster(?:\s+confession)?)\s*(?:ch(?:apter)?\.?\s*)?(\d{1,2})$/i.exec(q);
+  // 5b. Westminster Confession Chapter or Chapter:Section (WCF 1, WCF 1:6, WCF 28.1)
+  const wcfMatch = /^(?:wcf|westminster(?:\s+confession)?)\s*(?:ch(?:apter)?\.?\s*)?(\d{1,2})(?:[:.\s]+(?:sec(?:tion)?\.?\s*)?(\d{1,2}))?$/i.exec(q);
   if (wcfMatch && wcf) {
-    const n = Number(wcfMatch[1]);
-    if (n >= 1 && n <= 33) {
-      const h = (wcf.headings || []).find((hd) => new RegExp(`^Chapter\\s+${n}\\b`, "i").test(hd.text));
-      if (h) {
+    const ch = Number(wcfMatch[1]);
+    const sec = wcfMatch[2] ? Number(wcfMatch[2]) : null;
+    if (ch >= 1 && ch <= 33) {
+      if (sec) {
         results.push(makeQuickResult(wcf, {
-          score: 520,
-          headingSlug: h.slug,
-          headingText: h.text,
-          snippetHtml: `Jump to <strong>${escapeHtml(h.text)}</strong>`,
+          score: 525,
+          qaAnchor: `wcf-${ch}-${sec}`,
+          snippetHtml: `Jump directly to <strong>Chapter ${ch}, Section ${sec}</strong>`,
         }));
+      } else {
+        const h = (wcf.headings || []).find((hd) => new RegExp(`^Chapter\\s+${ch}\\b`, "i").test(hd.text));
+        if (h) {
+          results.push(makeQuickResult(wcf, {
+            score: 520,
+            headingSlug: h.slug,
+            headingText: h.text,
+            snippetHtml: `Jump to <strong>${escapeHtml(h.text)}</strong>`,
+          }));
+        }
       }
     }
   }
@@ -487,6 +558,23 @@ export function parseSearchShortcut(query, allDocs) {
         headingText: h.text,
         snippetHtml: `Jump to <strong>${escapeHtml(h.text)}</strong>`,
       }));
+    }
+  }
+
+  // 5d. Acts of Synod 2024 Article (Synod 2024 Art 15, Synod 24 14, Acts 2024 Art 25, Acts 15)
+  const actsMatch = /^(?:(?:the\s+)?acts(?:\s+of\s+synod)?|synod)(?:\s*(?:20)?24)?\s*(?:art(?:icle)?\.?\s*)?(\d{1,2})$/i.exec(q);
+  if (actsMatch && acts2024) {
+    const n = Number(actsMatch[1]);
+    if (n >= 1 && n <= 43) {
+      const h = (acts2024.headings || []).find((hd) => new RegExp(`^Article\\s+${n}\\b`, "i").test(hd.text));
+      if (h) {
+        results.push(makeQuickResult(acts2024, {
+          score: 520,
+          headingSlug: h.slug,
+          headingText: h.text,
+          snippetHtml: `Jump to <strong>${escapeHtml(h.text)}</strong>`,
+        }));
+      }
     }
   }
 
@@ -868,26 +956,24 @@ export function applyFormPersonalization(mdText, doc, values = {}, { markTokens 
 
     // Vows (Exchange of Vows columns): groom speaks to wife, bride speaks to husband
     out = out.replace(
-      /(I,[\u00a0 ]*)Full Name([\u00a0 ]*,<br><br>receive you,[\u00a0 ]*)Full Name([\u00a0 ]*,<br><br>to be my wife)/g,
-      (_, a, b, c) =>
-        `${a}${emit("groomFull", "Full Name", groomFull)}${b.replace(/[\u00a0 ]+,/, ",")}${emit("brideFull", "Full Name", brideFull)}${c.replace(/^[\u00a0 ]+,/, ",")}`
+      /I,[\u00a0 ]*Full Name[\u00a0 ]*,<br><br>receive you,[\u00a0 ]*Full Name[\u00a0 ]*,<br><br>to be my wife/g,
+      () => `I, ${emit("groomFull", "Full Name", groomFull)},<br><br>receive you, ${emit("brideFull", "Full Name", brideFull)},<br><br>to be my wife`
     );
     out = out.replace(
-      /(I,[\u00a0 ]*)Full Name([\u00a0 ]*,<br><br>receive you,[\u00a0 ]*)Full Name([\u00a0 ]*,<br><br>to be my husband)/g,
-      (_, a, b, c) =>
-        `${a}${emit("brideFull", "Full Name", brideFull)}${b.replace(/[\u00a0 ]+,/, ",")}${emit("groomFull", "Full Name", groomFull)}${c.replace(/^[\u00a0 ]+,/, ",")}`
+      /I,[\u00a0 ]*Full Name[\u00a0 ]*,<br><br>receive you,[\u00a0 ]*Full Name[\u00a0 ]*,<br><br>to be my husband/g,
+      () => `I, ${emit("brideFull", "Full Name", brideFull)},<br><br>receive you, ${emit("groomFull", "Full Name", groomFull)},<br><br>to be my husband`
     );
 
     // Alternative OR column vows
     out = out.replace(
-      /(witness that I,[\u00a0 ]*)Full Name([\u00a0 ]*,<br><br>receive )Full Name([\u00a0 ]*, to be my wife[\s\S]*?<br><br>)Full Name([\u00a0 ]*, all that I am)/g,
-      (_, a, b, c, d) =>
-        `${a}${emit("groomFull", "Full Name", groomFull)}${b.replace(/[\u00a0 ]+,/, ",")}${emit("brideFull", "Full Name", brideFull)}${c.replace(/^[\u00a0 ]+,/, ",")}${emit("brideFirst", "Full Name", brideFirst || brideFull)}${d.replace(/^[\u00a0 ]+,/, ",")}`
+      /witness that I,[\u00a0 ]*Full Name[\u00a0 ]*,<br><br>receive Full Name([\u00a0 ]*, to be my wife[\s\S]*?<br><br>)Full Name[\u00a0 ]*, all that I am/g,
+      (_, mid) =>
+        `witness that I, ${emit("groomFull", "Full Name", groomFull)},<br><br>receive ${emit("brideFull", "Full Name", brideFull)}${mid.replace(/^[\u00a0 ]+,/, ",")}${emit("brideFirst", "Full Name", brideFirst || brideFull)}, all that I am`
     );
     out = out.replace(
-      /(witness that I,[\u00a0 ]*)Full Name([\u00a0 ]*, receive<br>)Full Name([\u00a0 ]*, to be my husband[\s\S]*?<br><br>)Full Name([\u00a0 ]*, all that I am)/g,
-      (_, a, b, c, d) =>
-        `${a}${emit("brideFull", "Full Name", brideFull)}${b.replace(/[\u00a0 ]+,/, ",")}${emit("groomFull", "Full Name", groomFull)}${c.replace(/^[\u00a0 ]+,/, ",")}${emit("groomFirst", "Full Name", groomFirst || groomFull)}${d.replace(/^[\u00a0 ]+,/, ",")}`
+      /witness that I,[\u00a0 ]*Full Name[\u00a0 ]*, receive<br>Full Name([\u00a0 ]*, to be my husband[\s\S]*?<br><br>)Full Name[\u00a0 ]*, all that I am/g,
+      (_, mid) =>
+        `witness that I, ${emit("brideFull", "Full Name", brideFull)},<br><br>receive ${emit("groomFull", "Full Name", groomFull)}${mid.replace(/^[\u00a0 ]+,/, ",")}${emit("groomFirst", "Full Name", groomFirst || groomFull)}, all that I am`
     );
 
     // Remaining ring vows "Full Name , with this ring..." / "Full Name , I give you..."
@@ -903,9 +989,9 @@ export function applyFormPersonalization(mdText, doc, values = {}, { markTokens 
     );
 
     if (id.includes("banns")) {
-      out = out.replace(/(take place at\s+)Place\b/, (_, pre) => pre + emit("place", "Place", values.place));
-      out = out.replace(/(on[\u00a0 ]+)Day\b/, (_, pre) => pre + emit("day", "Day", values.day));
-      out = out.replace(/(the[\u00a0 ]+)Date([\u00a0 ]*\.)/, (_, pre, post) => pre + emit("date", "Date", values.date) + post.trimStart());
+      out = out.replace(/(take place at)\s+Place\b/, (_, pre) => `${pre}\n${emit("place", "Place", values.place)}`);
+      out = out.replace(/on[\u00a0 ]+Day\b/, () => `on ${emit("day", "Day", values.day)}`);
+      out = out.replace(/the[\u00a0 ]+Date[\u00a0 ]*\./, () => `the ${emit("date", "Date", values.date)}.`);
     }
   } else if (id === "01-form-of-subscription") {
     out = out.replace(/_{5,}(?=\s*\/\s*of the Classis)/, () =>
@@ -982,12 +1068,16 @@ export function applyFormPersonalization(mdText, doc, values = {}, { markTokens 
     }
 
     if (path.includes("04 - Discipline/")) {
-      out = out.replace(/(of[\u00a0 ]+)Address([\u00a0 ]*)(?=[,.;:?!\n]|$)/g, (_, pre) =>
-        `${pre.replace(/[\u00a0 ]+$/, " ")}${emit("address", "Address", values.address)}`
-      );
-      out = out.replace(/(on[\u00a0 ]+)Date([\u00a0 ]*)(?=[,.;:?!\n]|$)/g, (_, pre) =>
-        `${pre.replace(/[\u00a0 ]+$/, " ")}${emit("date", "Date", values.date)}`
-      );
+      out = out.replace(/of[\u00a0 ]+Address[\u00a0 ]*/g, (m, off, str) => {
+        const nextChar = str[off + m.length] || "";
+        const needPost = nextChar && !/^[,.;:?!)\]\n<]/.test(nextChar) && /[\u00a0 ]$/.test(m);
+        return `of ${emit("address", "Address", values.address)}${needPost ? " " : ""}`;
+      });
+      out = out.replace(/on[\u00a0 ]+Date[\u00a0 ]*/g, (m, off, str) => {
+        const nextChar = str[off + m.length] || "";
+        const needPost = nextChar && !/^[,.;:?!)\]\n<]/.test(nextChar) && /[\u00a0 ]$/.test(m);
+        return `on ${emit("date", "Date", values.date)}${needPost ? " " : ""}`;
+      });
     }
   }
 
@@ -1084,4 +1174,36 @@ export function formatForSlides(cleanText, { maxChars = 230, maxLines = 4 } = {}
 
   flushPoetic();
   return slides.join("\n\n");
+}
+
+// ---------------------------------------------------------------------------
+// 6. Word / Bulletin (.doc) Document Builder
+// ---------------------------------------------------------------------------
+
+export function buildWordDocumentHtml(title, cleanHtml) {
+  const safeTitle = escapeHtml(title || "CRCA Document");
+  return `<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+  <meta charset="utf-8">
+  <title>${safeTitle}</title>
+  <style>
+    @page { margin: 20mm; }
+    body { font-family: Georgia, Cambria, "Times New Roman", serif; font-size: 11.5pt; line-height: 1.55; color: #111111; }
+    h1 { font-size: 18pt; color: #1B365D; border-bottom: 1.5pt solid #A67C2E; padding-bottom: 4pt; margin-bottom: 12pt; }
+    h2 { font-size: 14pt; color: #1B365D; margin-top: 16pt; margin-bottom: 6pt; }
+    h3 { font-size: 12pt; color: #1B365D; margin-top: 12pt; margin-bottom: 4pt; }
+    h4 { font-size: 11pt; color: #1B365D; margin-top: 10pt; margin-bottom: 4pt; }
+    p { margin: 0 0 8pt 0; }
+    blockquote { margin: 8pt 0 8pt 14pt; padding-left: 10pt; border-left: 2.5pt solid #A67C2E; color: #333333; }
+    table { width: 100%; border-collapse: collapse; margin: 10pt 0; }
+    th, td { border: 1pt solid #CCCCCC; padding: 6pt 8pt; vertical-align: top; text-align: left; }
+    th { background: #F2EFE9; font-weight: bold; }
+    sup { font-size: 8pt; }
+  </style>
+</head>
+<body>
+${cleanHtml}
+</body>
+</html>`;
 }

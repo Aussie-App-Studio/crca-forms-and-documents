@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-20T15:03:30+00:00",
+  "generatedAt": "2026-11-21T12:30:04+00:00",
   "repoDefault": {
     "owner": "Aussie-App-Studio",
     "repo": "crca-forms-and-documents",
     "branch": "main"
   },
-  "documentCount": 40,
+  "documentCount": 42,
   "categories": [
     {
       "id": "creeds-and-confessions",
@@ -2361,6 +2361,278 @@
                   "level": 3,
                   "text": "Article 86 — Lording Over One Another",
                   "slug": "article-86-lording-over-one-another"
+                }
+              ]
+            },
+            {
+              "id": "church-order-02-rules-for-the-final-examination-2024",
+              "title": "Rules for the Final Examination (2024)",
+              "path": "Church Order/02 - Rules for the Final Examination (2024).md",
+              "pdfPath": "CRCA Rules for the Final Examination 2024.pdf",
+              "wordCount": 1138,
+              "footnoteCount": 0,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "General",
+                  "slug": "general"
+                },
+                {
+                  "level": 2,
+                  "text": "A. Requirements",
+                  "slug": "a-requirements"
+                },
+                {
+                  "level": 2,
+                  "text": "B. Examination guidelines for Specimen Sermon",
+                  "slug": "b-examination-guidelines-for-specimen-sermon"
+                },
+                {
+                  "level": 2,
+                  "text": "C. Examination guidelines for Oral examination",
+                  "slug": "c-examination-guidelines-for-oral-examination"
+                },
+                {
+                  "level": 2,
+                  "text": "D. After the Examination",
+                  "slug": "d-after-the-examination"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acts-of-synod",
+      "title": "Acts of Synod",
+      "groups": [
+        {
+          "id": "acts-of-synod",
+          "title": "Acts of Synod",
+          "items": [
+            {
+              "id": "acts-of-synod-01-acts-of-synod-2024",
+              "title": "Acts of Synod (2024)",
+              "path": "Acts of Synod/01 - Acts of Synod (2024).md",
+              "pdfPath": "CRCA Acts of Synod 2024.pdf",
+              "wordCount": 10679,
+              "footnoteCount": 0,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Article 1: Opening",
+                  "slug": "article-1-opening"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 2: Credentials",
+                  "slug": "article-2-credentials"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 3: Election and Confirmation of Moderamen",
+                  "slug": "article-3-election-and-confirmation-of-moderamen"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 4: Constitution of Synod",
+                  "slug": "article-4-constitution-of-synod"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 5: Advisers",
+                  "slug": "article-5-advisers"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 6: Agreement with Confessional Standards",
+                  "slug": "article-6-agreement-with-confessional-standards"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 7: Matters of Procedure",
+                  "slug": "article-7-matters-of-procedure"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 8: Fraternal Delegate and Presenters",
+                  "slug": "article-8-fraternal-delegate-and-presenters"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 9: Correspondence",
+                  "slug": "article-9-correspondence"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 10: Websites Consolidation",
+                  "slug": "article-10-websites-consolidation"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 11: Updating Denominational Terms",
+                  "slug": "article-11-updating-denominational-terms"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 12: Overseas Mission Review Committee",
+                  "slug": "article-12-overseas-mission-review-committee"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 13: Forms for Baptism Review",
+                  "slug": "article-13-forms-for-baptism-review"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 14: Children and the Lord’s Supper - Overture",
+                  "slug": "article-14-children-and-the-lords-supper-overture"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 15: Children at the Lord’s Supper (Membership) Report",
+                  "slug": "article-15-children-at-the-lords-supper-membership-report"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 16: Local Church Outreach",
+                  "slug": "article-16-local-church-outreach"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 17: Church Planting Taskforce",
+                  "slug": "article-17-church-planting-taskforce"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 18: Evaluate the Cost of SIC Committee",
+                  "slug": "article-18-evaluate-the-cost-of-sic-committee"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 19: Human Resources Study Committee",
+                  "slug": "article-19-human-resources-study-committee"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 20: Candidacy Committee",
+                  "slug": "article-20-candidacy-committee"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 21: IndiWay",
+                  "slug": "article-21-indiway"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 22: World Transform",
+                  "slug": "article-22-world-transform"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 23: Reformed Churches Youth Committee",
+                  "slug": "article-23-reformed-churches-youth-committee"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 24: Book of Forms",
+                  "slug": "article-24-book-of-forms"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 25: Safe Church Advisory Committee (SCAC)",
+                  "slug": "article-25-safe-church-advisory-committee-scac"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 26: Safe Church Advisory Committee (SCAC) Addendum",
+                  "slug": "article-26-safe-church-advisory-committee-scac-addendum"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 27: Alleviation of Financial Barriers to Ministry Training",
+                  "slug": "article-27-alleviation-of-financial-barriers-to-ministry-training"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 28: Giftedness in Preaching",
+                  "slug": "article-28-giftedness-in-preaching"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 29: Credo Baptism – Change to the Form of Subscription - Majority",
+                  "slug": "article-29-credo-baptism-change-to-the-form-of-subscription-majority"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 30: Credo Baptism – Change to the Form of Subscription - Minority",
+                  "slug": "article-30-credo-baptism-change-to-the-form-of-subscription-minority"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 31: Solomon Islands Workgroup",
+                  "slug": "article-31-solomon-islands-workgroup"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 32: Synodical Interim Committee",
+                  "slug": "article-32-synodical-interim-committee"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 33: Committee for Ecumenical Relations",
+                  "slug": "article-33-committee-for-ecumenical-relations"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 34: Business and Finance Committee",
+                  "slug": "article-34-business-and-finance-committee"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 35: Denominational Workers Review Committee",
+                  "slug": "article-35-denominational-workers-review-committee"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 36: Train Workgroup",
+                  "slug": "article-36-train-workgroup"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 37: GROW Workgroup",
+                  "slug": "article-37-grow-workgroup"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 38: GROW & TRAIN Supplementary Report",
+                  "slug": "article-38-grow-train-supplementary-report"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 39: Master Budget",
+                  "slug": "article-39-master-budget"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 40: Committee Appointments",
+                  "slug": "article-40-committee-appointments"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 41: Next Synod",
+                  "slug": "article-41-next-synod"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 42: Vote of thanks",
+                  "slug": "article-42-vote-of-thanks"
+                },
+                {
+                  "level": 2,
+                  "text": "Article 43: Close of Synod",
+                  "slug": "article-43-close-of-synod"
                 }
               ]
             }

@@ -15,6 +15,8 @@ PDF_MAP = {
     "Creeds and Confessions/02 - Reformed Confessions/01 - The Belgic Confession.md": "CRCA BelgicConfession.pdf",
     "Creeds and Confessions/02 - Reformed Confessions/02 - The Heidelberg Catechism.md": "CRCA HeidelbergCatechism.pdf",
     "Creeds and Confessions/02 - Reformed Confessions/03 - The Canons of Dort.md": "CRCA CanonsofDort.pdf",
+    "Church Order/02 - Rules for the Final Examination (2024).md": "CRCA Rules for the Final Examination 2024.pdf",
+    "Acts of Synod/01 - Acts of Synod (2024).md": "CRCA Acts of Synod 2024.pdf",
 }
 
 DEFAULT_REPO = {
@@ -285,7 +287,26 @@ def collect_categories() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
                 }
             )
 
-    # 4. Other Resources
+    # 4. Acts of Synod
+    as_id = "acts-of-synod"
+    as_title = "Acts of Synod"
+    as_dir = REPO_ROOT / "Acts of Synod"
+    if as_dir.exists():
+        as_items = []
+        for f in sorted(as_dir.glob("*.md")):
+            item, s_item = build_doc_entry(f, as_id, as_title, "Acts of Synod")
+            as_items.append(item)
+            search_docs.append(s_item)
+        if as_items:
+            categories.append(
+                {
+                    "id": as_id,
+                    "title": as_title,
+                    "groups": [{"id": "acts-of-synod", "title": "Acts of Synod", "items": as_items}],
+                }
+            )
+
+    # 5. Other Resources
     or_id = "other-resources"
     or_title = "Other Resources"
     or_dir = REPO_ROOT / "Other Resources"
@@ -320,8 +341,8 @@ def main() -> int:
     categories, search_docs = collect_categories()
     doc_count = sum(len(g["items"]) for c in categories for g in c["groups"])
 
-    if doc_count != 40:
-        print(f"ERROR: Expected 40 documents, found {doc_count}", file=sys.stderr)
+    if doc_count != 42:
+        print(f"ERROR: Expected 42 documents, found {doc_count}", file=sys.stderr)
         return 1
 
     # Verify every referenced path exists on disk

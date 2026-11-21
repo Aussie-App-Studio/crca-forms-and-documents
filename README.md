@@ -61,17 +61,20 @@ Find the **Developer mode** switch on that page and turn it **ON**:
 - **Ecumenical Creeds:** The Apostles' Creed, The Nicene Creed, and The Athanasian Creed
 - **Reformed Confessions & Subscription:** The Belgic Confession, The Heidelberg Catechism, The Canons of Dort, The Westminster Confession of Faith, and the CRCA Form of Subscription
 - **The Liturgical Forms:** Baptism (Children I–IV & Adults), Public Profession of Faith, Lord's Supper (Preparation I–II & Celebration I–V), Church Discipline, Ordination & Installation of Office Bearers, Marriage, and Funerals
-- **CRCA Church Order (2022):** Full text of the Church Order
+- **CRCA Church Order:** CRCA Church Order (2022) and Rules for the Final Examination (2024)
+- **Acts of Synod:** The Acts of Synod 2024
 - **Worship Resources:** Calls to Worship, Greetings & Benedictions, Readings of the Law, Assurances of Pardon, Readings at the Offerings, and Alternatives & Options
 
 ## Helpful Features
 
-- **Fast Search:** Find any form, creed, Lord's Day, article, or phrase in seconds.
-- **Read Your Way:** Open as a quick popup, in your browser's **Side Panel** alongside Google Docs or Word, or in a full tab. Switch between Light and Dark themes and adjust text size (`A-` / `A+`).
-- **Clickable Footnotes:** Tap any footnote number to view Scripture references right where you're reading, or hide footnotes with one click.
-- **Easy Copy & Print:** Copy clean text (with or without footnotes) for bulletins, orders of service, and slides — or click **PDF / Print** for a clean printable layout.
-- **Works Offline & Updates Automatically:** Documents you open are saved for offline use, and whenever CRCA documents are updated, you'll receive the latest text automatically.
-- **Bookmarks & Recents:** Star your most-used forms so they're always quick to find.
+- **Fast Search & Quick Jump:** Search by phrase or jump straight to `LD 1`, `Q 1`, `BC 14`, `CD 1:7`, `WCF 1:6`, or `CO 71`.
+- **Service Prep & Option Selection:** Fill in names, pronouns, dates, and choose `EITHER / OR` options directly inside Liturgical Forms before copying or printing.
+- **Church Order & Confessional Harmony:** Preview internal Church Order references (`Art 51`, `Art 23.f`) in place, jump between parallel Confessions, Church Order, and Liturgical Forms, or open **Side-by-Side Compare** in a full tab.
+- **Read Your Way:** Open as a quick popup, in your browser's **Side Panel** alongside Google Docs or Word, in a full tab, or in distraction-free **Pulpit Mode**. Switch Light/Dark themes and adjust text size (`A-` / `A+`).
+- **Clickable Footnotes & Scripture Links:** Tap any footnote number to preview references (linked to BibleGateway in your chosen translation), or hide footnotes with one click.
+- **Rich-Text Copy, Slides & Word Export:** Copy rich + plain text for Word/Google Docs bulletins, copy single Q&As/sections or presentation **Slides**, download as **Word (`.doc`)**, or click **PDF / Print**.
+- **Works Offline & Updates Automatically:** Cache all documents with one click (`Download All Offline`) for reliable offline use anywhere.
+- **Bookmarks, Recents & Shortcuts:** Star frequently used forms, resume right where you left off, right-click selected text to search, or press `Alt+Shift+C` / `Alt+Shift+S`.
 
 ---
 
@@ -82,7 +85,8 @@ On a phone, tablet, Safari, or Firefox — or just want to read a document right
 - [The Liturgical Forms](The%20Liturgical%20Forms)
 - [Creeds and Confessions](Creeds%20and%20Confessions)
 - [Form of Subscription](01%20-%20Form%20of%20Subscription.md)
-- [CRCA Church Order (2022)](Church%20Order)
+- [CRCA Church Order & Examination Rules](Church%20Order)
+- [Acts of Synod](Acts%20of%20Synod)
 - [Other Worship Resources](Other%20Resources)
 
 ---
