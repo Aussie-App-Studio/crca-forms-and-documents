@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-21T12:30:04+00:00",
+  "generatedAt": "2026-11-22T08:57:13+00:00",
   "repoDefault": {
     "owner": "Aussie-App-Studio",
     "repo": "crca-forms-and-documents",
     "branch": "main"
   },
-  "documentCount": 42,
+  "documentCount": 43,
   "categories": [
     {
       "id": "creeds-and-confessions",
@@ -1161,6 +1161,77 @@
               "wordCount": 390,
               "footnoteCount": 1,
               "headings": []
+            }
+          ]
+        },
+        {
+          "id": "contemporary-testimony",
+          "title": "Contemporary Testimony",
+          "items": [
+            {
+              "id": "creeds-and-confessions-03-contemporary-testimony-01-our-world-belongs-to-god",
+              "title": "Our World Belongs to God",
+              "path": "Creeds and Confessions/03 - Contemporary Testimony/01 - Our World Belongs to God.md",
+              "pdfPath": null,
+              "wordCount": 3785,
+              "footnoteCount": 57,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "Introduction",
+                  "slug": "introduction"
+                },
+                {
+                  "level": 2,
+                  "text": "Preamble",
+                  "slug": "preamble"
+                },
+                {
+                  "level": 2,
+                  "text": "Creation",
+                  "slug": "creation"
+                },
+                {
+                  "level": 2,
+                  "text": "Fall",
+                  "slug": "fall"
+                },
+                {
+                  "level": 2,
+                  "text": "Redemption",
+                  "slug": "redemption"
+                },
+                {
+                  "level": 2,
+                  "text": "Christ",
+                  "slug": "christ"
+                },
+                {
+                  "level": 2,
+                  "text": "The Spirit",
+                  "slug": "the-spirit"
+                },
+                {
+                  "level": 2,
+                  "text": "Revelation",
+                  "slug": "revelation"
+                },
+                {
+                  "level": 2,
+                  "text": "God's New People",
+                  "slug": "gods-new-people"
+                },
+                {
+                  "level": 2,
+                  "text": "The Mission of God's People",
+                  "slug": "the-mission-of-gods-people"
+                },
+                {
+                  "level": 2,
+                  "text": "New Creation",
+                  "slug": "new-creation"
+                }
+              ]
             }
           ]
         }

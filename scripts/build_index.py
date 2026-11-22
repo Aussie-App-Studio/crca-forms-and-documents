@@ -240,6 +240,16 @@ def collect_categories() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         cc_groups.append({"id": "form-of-subscription", "title": "Form of Subscription", "items": [item]})
         search_docs.append(s_item)
 
+    ct_dir = REPO_ROOT / "Creeds and Confessions" / "03 - Contemporary Testimony"
+    if ct_dir.exists():
+        ct_items = []
+        for f in sorted(ct_dir.glob("*.md")):
+            item, s_item = build_doc_entry(f, cc_id, cc_title, "Contemporary Testimony")
+            ct_items.append(item)
+            search_docs.append(s_item)
+        if ct_items:
+            cc_groups.append({"id": "contemporary-testimony", "title": "Contemporary Testimony", "items": ct_items})
+
     categories.append({"id": cc_id, "title": cc_title, "groups": cc_groups})
 
     # 2. The Liturgical Forms (preserving 01..07 order)
@@ -341,8 +351,8 @@ def main() -> int:
     categories, search_docs = collect_categories()
     doc_count = sum(len(g["items"]) for c in categories for g in c["groups"])
 
-    if doc_count != 42:
-        print(f"ERROR: Expected 42 documents, found {doc_count}", file=sys.stderr)
+    if doc_count != 43:
+        print(f"ERROR: Expected 43 documents, found {doc_count}", file=sys.stderr)
         return 1
 
     # Verify every referenced path exists on disk

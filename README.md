@@ -60,6 +60,7 @@ Find the **Developer mode** switch on that page and turn it **ON**:
 
 - **Ecumenical Creeds:** The Apostles' Creed, The Nicene Creed, and The Athanasian Creed
 - **Reformed Confessions & Subscription:** The Belgic Confession, The Heidelberg Catechism, The Canons of Dort, The Westminster Confession of Faith, and the CRCA Form of Subscription
+- **Contemporary Testimony:** Our World Belongs to God
 - **The Liturgical Forms:** Baptism (Children I–IV & Adults), Public Profession of Faith, Lord's Supper (Preparation I–II & Celebration I–V), Church Discipline, Ordination & Installation of Office Bearers, Marriage, and Funerals
 - **CRCA Church Order:** CRCA Church Order (2022) and Rules for the Final Examination (2024)
 - **Acts of Synod:** The Acts of Synod 2024

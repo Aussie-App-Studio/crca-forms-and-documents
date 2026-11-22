@@ -232,6 +232,7 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
   const coDoc = findTitle("CRCA Church Order (2022)");
   const finalExamDoc = findTitle("Rules for the Final Examination (2024)");
   const acts2024Doc = findTitle("Acts of Synod (2024)");
+  const owbgDoc = findTitle("Our World Belongs to God");
   const apostlesDoc = findTitle("The Apostles' Creed");
   const niceneDoc = findTitle("The Nicene Creed");
   const athanasianDoc = findTitle("The Athanasian Creed");
@@ -265,6 +266,7 @@ export function linkifyDocRefsHtml(html, allDocs, currentDocId) {
   addRule("Final Examination", finalExamDoc);
   addRule("The Acts of Synod 2024", acts2024Doc);
   addRule("Acts of Synod 2024", acts2024Doc);
+  addRule("Our World Belongs to God: A Contemporary Testimony", owbgDoc);
   addRule("Apostles' Creed", apostlesDoc);
   addRule("Apostles Creed", apostlesDoc);
   addRule("Nicene Creed", niceneDoc);
@@ -405,6 +407,7 @@ export function parseSearchShortcut(query, allDocs) {
   const wcf = allDocs.find((d) => d.id.endsWith("the-westminster-confession-of-faith"));
   const co = allDocs.find((d) => d.id.includes("crca-church-order"));
   const acts2024 = allDocs.find((d) => d.id.includes("acts-of-synod-2024"));
+  const owbg = allDocs.find((d) => d.id.includes("our-world-belongs-to-god"));
   const results = [];
 
   // 1. Heidelberg Catechism Lord's Day (LD 1, hc ld 21, lord's day 52)
@@ -574,6 +577,43 @@ export function parseSearchShortcut(query, allDocs) {
           headingText: h.text,
           snippetHtml: `Jump to <strong>${escapeHtml(h.text)}</strong>`,
         }));
+      }
+    }
+  }
+
+  // 5e. Our World Belongs to God (OWBG, OWBG 1, Contemporary Testimony 43)
+  const owbgMatch = /^(?:owbg|contemporary\s+testimony)(?:\s*(?:art(?:icle)?\.?|para(?:graph)?\.?|#)?\s*(\d{1,2}))?$/i.exec(q);
+  if (owbgMatch && owbg) {
+    if (owbgMatch[1] === undefined) {
+      results.push(makeQuickResult(owbg, {
+        score: 500,
+        snippetHtml: `Open <strong>${escapeHtml(owbg.title)}</strong>`,
+      }));
+    } else {
+      const n = Number(owbgMatch[1]);
+      if (n >= 1 && n <= 58) {
+        const sectionRanges = [
+          [1, 6, "Preamble"],
+          [7, 12, "Creation"],
+          [13, 17, "Fall"],
+          [18, 22, "Redemption"],
+          [23, 28, "Christ"],
+          [29, 31, "The Spirit"],
+          [32, 33, "Revelation"],
+          [34, 40, "God's New People"],
+          [41, 54, "The Mission of God's People"],
+          [55, 58, "New Creation"],
+        ];
+        const sec = sectionRanges.find(([lo, hi]) => n >= lo && n <= hi);
+        const h = sec ? (owbg.headings || []).find((hd) => hd.text === sec[2]) : null;
+        if (h) {
+          results.push(makeQuickResult(owbg, {
+            score: 520,
+            headingSlug: h.slug,
+            headingText: h.text,
+            snippetHtml: `Jump to <strong>${escapeHtml(h.text)}</strong> (Stanza ${n})`,
+          }));
+        }
       }
     }
   }
