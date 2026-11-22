@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-22T08:57:13+00:00",
+  "generatedAt": "2026-11-22T09:32:04+00:00",
   "repoDefault": {
     "owner": "Aussie-App-Studio",
     "repo": "crca-forms-and-documents",
@@ -2727,11 +2727,17 @@
               "wordCount": 276,
               "footnoteCount": 0,
               "headings": []
-            },
+            }
+          ]
+        },
+        {
+          "id": "other-resources-liturgical-readings",
+          "title": "Liturgical Readings",
+          "items": [
             {
-              "id": "other-resources-02-calls-to-worship",
+              "id": "other-resources-02-liturgical-readings-01-calls-to-worship",
               "title": "Calls to Worship",
-              "path": "Other Resources/02 - Calls to Worship.md",
+              "path": "Other Resources/02 - Liturgical Readings/01 - Calls to Worship.md",
               "pdfPath": null,
               "wordCount": 2711,
               "footnoteCount": 0,
@@ -2772,17 +2778,11 @@
                   "slug": "g-general"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "other-resources-other-liturgical-readings",
-          "title": "Other Liturgical Readings",
-          "items": [
+            },
             {
-              "id": "other-resources-03-other-liturgical-readings-01-greetings-and-benedictions",
+              "id": "other-resources-02-liturgical-readings-02-greetings-and-benedictions",
               "title": "Greetings and Benedictions",
-              "path": "Other Resources/03 - Other Liturgical Readings/01 - Greetings and Benedictions.md",
+              "path": "Other Resources/02 - Liturgical Readings/02 - Greetings and Benedictions.md",
               "pdfPath": null,
               "wordCount": 407,
               "footnoteCount": 0,
@@ -2845,9 +2845,9 @@
               ]
             },
             {
-              "id": "other-resources-03-other-liturgical-readings-02-readings-of-the-law",
+              "id": "other-resources-02-liturgical-readings-03-readings-of-the-law",
               "title": "Readings of the Law",
-              "path": "Other Resources/03 - Other Liturgical Readings/02 - Readings of the Law.md",
+              "path": "Other Resources/02 - Liturgical Readings/03 - Readings of the Law.md",
               "pdfPath": null,
               "wordCount": 4366,
               "footnoteCount": 0,
@@ -2940,9 +2940,9 @@
               ]
             },
             {
-              "id": "other-resources-03-other-liturgical-readings-03-assurances-of-pardon",
+              "id": "other-resources-02-liturgical-readings-04-assurances-of-pardon",
               "title": "Assurances of Pardon",
-              "path": "Other Resources/03 - Other Liturgical Readings/03 - Assurances of Pardon.md",
+              "path": "Other Resources/02 - Liturgical Readings/04 - Assurances of Pardon.md",
               "pdfPath": null,
               "wordCount": 2831,
               "footnoteCount": 0,
@@ -2985,9 +2985,9 @@
               ]
             },
             {
-              "id": "other-resources-03-other-liturgical-readings-04-readings-at-the-offerings",
+              "id": "other-resources-02-liturgical-readings-05-readings-at-the-offerings",
               "title": "Readings at the Offerings",
-              "path": "Other Resources/03 - Other Liturgical Readings/04 - Readings at the Offerings.md",
+              "path": "Other Resources/02 - Liturgical Readings/05 - Readings at the Offerings.md",
               "pdfPath": null,
               "wordCount": 498,
               "footnoteCount": 0,
