@@ -64,7 +64,7 @@ Find the **Developer mode** switch on that page and turn it **ON**:
 - **The Liturgical Forms:** Baptism (Children I–IV & Adults), Public Profession of Faith, Lord's Supper (Preparation I–II & Celebration I–V), Church Discipline, Ordination & Installation of Office Bearers, Marriage, and Funerals
 - **CRCA Church Order:** CRCA Church Order (2022) and Rules for the Final Examination (2024)
 - **Acts of Synod:** The Acts of Synod 2024
-- **Worship Resources:** Calls to Worship, Greetings & Benedictions, Readings of the Law, Assurances of Pardon, Readings at the Offerings, and Alternatives & Options
+- **Other Resources (Worship & Ministry Training):** Calls to Worship, Greetings & Benedictions, Readings of the Law, Assurances of Pardon, Readings at the Offerings, Alternatives & Options, and RTC Church Based Training (CBT)
 
 ## Helpful Features
 

@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-22T09:32:04+00:00",
+  "generatedAt": "2026-11-25T03:03:40+00:00",
   "repoDefault": {
     "owner": "Aussie-App-Studio",
     "repo": "crca-forms-and-documents",
     "branch": "main"
   },
-  "documentCount": 43,
+  "documentCount": 44,
   "categories": [
     {
       "id": "creeds-and-confessions",
@@ -61,7 +61,7 @@
               "title": "The Athanasian Creed",
               "path": "Creeds and Confessions/01 - Ecumenical Creeds/03 - The Athanasian Creed.md",
               "pdfPath": null,
-              "wordCount": 824,
+              "wordCount": 775,
               "footnoteCount": 0,
               "headings": [
                 {
@@ -3061,6 +3061,107 @@
                   "level": 2,
                   "text": "71. Hebrews 13:16",
                   "slug": "71-hebrews-13-16"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "other-resources-ministry-training",
+          "title": "Ministry Training",
+          "items": [
+            {
+              "id": "other-resources-04-ministry-training-01-rtc-church-based-training-cbt",
+              "title": "RTC Church Based Training (CBT)",
+              "path": "Other Resources/04 - Ministry Training/01 - RTC Church Based Training (CBT).md",
+              "pdfPath": "RTC Church Based Training (CBT).pdf",
+              "wordCount": 2602,
+              "footnoteCount": 0,
+              "headings": [
+                {
+                  "level": 2,
+                  "text": "The Structure of RTC CBT",
+                  "slug": "the-structure-of-rtc-cbt"
+                },
+                {
+                  "level": 3,
+                  "text": "1. Ministry Apprenticeship",
+                  "slug": "1-ministry-apprenticeship"
+                },
+                {
+                  "level": 3,
+                  "text": "2. Academic Study",
+                  "slug": "2-academic-study"
+                },
+                {
+                  "level": 3,
+                  "text": "3. Spiritual and Ministry Formation",
+                  "slug": "3-spiritual-and-ministry-formation"
+                },
+                {
+                  "level": 2,
+                  "text": "Requirements for Pastors and Churches",
+                  "slug": "requirements-for-pastors-and-churches"
+                },
+                {
+                  "level": 2,
+                  "text": "Costs",
+                  "slug": "costs"
+                },
+                {
+                  "level": 3,
+                  "text": "For Students",
+                  "slug": "for-students"
+                },
+                {
+                  "level": 3,
+                  "text": "For Churches and Pastors",
+                  "slug": "for-churches-and-pastors"
+                },
+                {
+                  "level": 2,
+                  "text": "Some Possible Scenarios",
+                  "slug": "some-possible-scenarios"
+                },
+                {
+                  "level": 2,
+                  "text": "Appendix: Ministry Competencies for RTC CBT Apprenticeship and Internships",
+                  "slug": "appendix-ministry-competencies-for-rtc-cbt-apprenticeship-and-internships"
+                },
+                {
+                  "level": 3,
+                  "text": "Character Development — Self-assessment and goal setting for personal growth",
+                  "slug": "character-development-self-assessment-and-goal-setting-for-personal-growth"
+                },
+                {
+                  "level": 3,
+                  "text": "Ministry Practice — Teaching and preaching",
+                  "slug": "ministry-practice-teaching-and-preaching"
+                },
+                {
+                  "level": 3,
+                  "text": "Ministry Practice — Pastoral skill",
+                  "slug": "ministry-practice-pastoral-skill"
+                },
+                {
+                  "level": 3,
+                  "text": "Ministry Practice — Evangelism and missions",
+                  "slug": "ministry-practice-evangelism-and-missions"
+                },
+                {
+                  "level": 3,
+                  "text": "Ministry Practice — Training others in ministry",
+                  "slug": "ministry-practice-training-others-in-ministry"
+                },
+                {
+                  "level": 3,
+                  "text": "Ministry Practice — Leadership",
+                  "slug": "ministry-practice-leadership"
+                },
+                {
+                  "level": 2,
+                  "text": "Contact",
+                  "slug": "contact"
                 }
               ]
             }

@@ -17,6 +17,7 @@ PDF_MAP = {
     "Creeds and Confessions/02 - Reformed Confessions/03 - The Canons of Dort.md": "CRCA CanonsofDort.pdf",
     "Church Order/02 - Rules for the Final Examination (2024).md": "CRCA Rules for the Final Examination 2024.pdf",
     "Acts of Synod/01 - Acts of Synod (2024).md": "CRCA Acts of Synod 2024.pdf",
+    "Other Resources/04 - Ministry Training/01 - RTC Church Based Training (CBT).md": "RTC Church Based Training (CBT).pdf",
 }
 
 DEFAULT_REPO = {
@@ -351,8 +352,8 @@ def main() -> int:
     categories, search_docs = collect_categories()
     doc_count = sum(len(g["items"]) for c in categories for g in c["groups"])
 
-    if doc_count != 43:
-        print(f"ERROR: Expected 43 documents, found {doc_count}", file=sys.stderr)
+    if doc_count != 44:
+        print(f"ERROR: Expected 44 documents, found {doc_count}", file=sys.stderr)
         return 1
 
     # Verify every referenced path exists on disk

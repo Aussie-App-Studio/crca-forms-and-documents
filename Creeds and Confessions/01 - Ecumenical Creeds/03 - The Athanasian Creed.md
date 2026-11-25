@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This creed is named after Athanasius (A.D. 293-373), the champion of orthodoxy against Arian attacks on the doctrine of the trinity. Although Athanasius did not write this creed and it is improperly named after him, the name persists because until the seventeenth century it was commonly ascribed to him. It is not from Greek (Eastern), but from Latin (Western) origin, and is not recognized by the Eastern Orthodox Church today. Apart from the opening and closing sentences, this creed consists of two parts, the first setting forth the orthodox doctrine of the trinity, and the second dealing chiefly with the incarnation and the two-natures doctrine.
+This creed is named after Athanasius (A.D. 293-373), the champion of orthodoxy against Arian attacks on the doctrine of the trinity. Apart from the opening and closing sentences, this creed consists of two parts, the first setting forth the orthodox doctrine of the trinity, and the second dealing chiefly with the incarnation and the two-natures doctrine.
 
 This creed, though more explicit and advanced theologically than the Apostles' and the Nicene creeds, does not possess their simplicity, spontaneity and majesty.
 
